@@ -1,0 +1,14 @@
+{% extends 'RoyalPages/base.html' %}
+
+{% block body %}
+  <ul>
+    {% for post in posts %}
+      <div class="post">
+        <a href="{% url 'RoyalPages:blog' post.title %}">{{ post.title }}</a>
+        <hr>
+        <p>{{ post.date_added }}</p>
+      </div>
+      <br>
+    {% endfor %}
+  </ul>
+{% endblock body %}

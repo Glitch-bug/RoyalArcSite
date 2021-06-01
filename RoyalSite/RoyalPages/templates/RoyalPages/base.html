@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Royal Arc</title>
+  </head>
+  <body>
+    <div class="nav-bar">
+      <a href="{% url 'RoyalPages:home' %}">Home</a>/
+      <a href="{% url 'RoyalPages:posts' %}">Blog Posts</a>
+    </div>
+    {% block body %}
+    {% endblock body %}
+  </body>
+</html>
