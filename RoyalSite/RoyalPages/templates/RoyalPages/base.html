@@ -1,10 +1,14 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
   <head>
     <title>Royal Arc</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'RoyalSite/css/base.css' %}"> 
   </head>
   <body>
     <div class="nav-bar">
+      <img src="{% static 'RoyalSite/images/royal_logo.jpg' %}">
       <a href="{% url 'RoyalPages:home' %}">Home</a>/
       <a href="{% url 'RoyalPages:posts' %}">Blog Posts</a>
     </div>
