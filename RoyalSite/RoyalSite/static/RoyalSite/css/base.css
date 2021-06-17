@@ -1,4 +1,4 @@
-
+/** Core */
 html{
     width:100%;
     height:100%;
@@ -12,13 +12,13 @@ body{
     flex-direction: column;
     background-color: #ecf0f3;
 }
-.header {
-    background-image: url("Cleaning Supplies.webp");
-}
 
+/** Header */
 h1 {
     align-self: center;
     font-family: "Comic Sans";
+    text-shadow: 2px 2px 4px #59595a, 
+    -2px -2px 4px rgb(255, 255, 255);
 }
 
 #logo {
@@ -43,19 +43,7 @@ h1 {
     box-shadow: 8px 8px 20px #cbced1, 
     -8px -8px 20px white;
 }
-.niv-bar {
-    display: flex;
-    width: 98%;
-    align-self: center;
-    align-items: center;
-    margin: 20px;
-    padding-top: 8px;
-    padding-right: 8px;
-    background: #ecf0f3;
-    border-radius: 20px;
-    height: auto;
 
-}
 
 .menu-links {
     display: flex;
@@ -75,12 +63,52 @@ h1 {
     color: #cdbc28;
 }
 
+/** Body */
+#home {
+    display: flex;
+    flex-direction: column;
+}
+#row_1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#row_2 {
+    display: flex;
+    flex-direction: row;
+}
+
 .content {
-    width: 75%;
+    display: flex;
+    width: 15%;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    padding: 8px;
+    background: #ecf0f3;
+    border-radius: 20px;
+    height: auto;
+    box-shadow: 8px 8px 20px #cbced1, 
+    -8px -8px 20px white;
+}
+
+.content > p  {
     align-self: center;
-    text-align: center;
+    text-align: justify;
     font-family: serif;
 }
+
+.content > i {
+    align-self: center;
+    text-align: serif;
+    padding: 5px;
+    border-radius: 5px 5px 0px 0px;
+    box-shadow: inset 3px 3px 6px #cbced1, 
+    -3px -3px 6px white;
+
+}
+
 
 .post {
     border: 1px solid purple;
