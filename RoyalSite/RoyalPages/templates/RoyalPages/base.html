@@ -10,7 +10,7 @@
   <body>
     <div class="wrapper">
       <nav class="navbar">
-        <img id="logo" src="{% static 'RoyalSite/images/royal_logo_link.png' %}">
+        <img id="logo" src="{% static 'RoyalSite/images/logo.png' %}">
         <ul>
           <li><a href="{% url 'RoyalPages:home' %}">Home</a></li>
           <li><a href="{% url 'RoyalPages:posts' %}">Blog Posts</a></li>
@@ -19,6 +19,8 @@
           <li><a href="#">Testing</a></li>
         </ul>
       </nav>
+      {% block intro %}
+      {% endblock intro %}
     </div>
     {% block body %}
     {% endblock body %}
