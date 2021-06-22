@@ -5,9 +5,9 @@ class BlogPost(models.Model):
     title = models.CharField(max_length=200)
     text = models.TextField()
     date_added = models.DateTimeField(auto_now_add=True)
-
     def __str__(self):
         """Returns a string representation of the model"""
-        return self.title
+        return self.title[:50]
 
-
+class Gallerys(models.Model):
+    pass
