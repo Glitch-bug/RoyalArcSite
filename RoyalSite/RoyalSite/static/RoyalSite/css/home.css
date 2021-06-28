@@ -1,0 +1,61 @@
+.wrapper {
+    background-image: url("background.jpg");
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.content > button {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
+    margin: 20px;
+    padding: 10px;
+    background-color: blueviolet;
+    border-radius: 5px;
+    height: min-content;
+    width: 100px;
+    border: none;
+    color: white;
+    font-size: medium;
+    transition: 0.5s;
+}
+
+.content > button:hover {
+    background-color: purple;
+}
+
+.content {
+    order: 2;
+    display: flex;
+    height: 100%;
+    width: 50%;
+    flex-direction: column;
+    justify-self: center;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    color: rgb(165, 100, 100);
+}
+
+.content > h1 {
+    font-size: 70px;
+    font-weight: bold;
+    color: rgb(250, 253, 77);
+    text-shadow: 3px 3px black, -3px -3px black;
+}
+
+.content > i {
+    font-size: 65px;
+    color: rgb(119, 119, 114);
+}
+
+.navbar > ul > li > a.home {
+    border-bottom: 3px purple solid;
+    color: rgba(248, 252, 52, 0.6);
+    width: 100%;
+}

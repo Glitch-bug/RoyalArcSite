@@ -6,17 +6,22 @@
     <title>Royal Arc</title>
     <link rel="stylesheet" type="text/css" href="{% static 'RoyalSite/css/base.css' %}"> 
     <link rel="shortcut icon" href="{% static 'RoyalSite/images/royal_logo_link.png' %}">
+    {% if home %}
+      <link rel="stylesheet" type="text/css" href="{% static 'RoyalSite/css/home.css' %}">
+    {% elif posts %}
+      <link rel="stylesheet" type="text/css" href="{% static 'RoyalSite/css/posts.css' %}">
+    {% endif %}
   </head>
   <body>
     <div class="wrapper">
       <nav class="navbar">
-        <img id="logo" src="{% static 'RoyalSite/images/logo.png' %}">
+        <img id="logo" src="{% static 'RoyalSite/images/royal.png' %}">
         <ul>
-          <li><a href="{% url 'RoyalPages:home' %}">Home</a></li>
-          <li><a href="{% url 'RoyalPages:posts' %}">Blog Posts</a></li>
-          <li><a href="{% url 'RoyalPages:about' %}">About Us</a></li>
-          <li><a href="#">Gallery</a></li>
-          <li><a href="#">Testing</a></li>
+          <li><a class="home" href="{% url 'RoyalPages:home' %}">Home</a></li>
+          <li><a class="posts" href="{% url 'RoyalPages:posts' %}">Blog Posts</a></li>
+          <li><a class="about" href="{% url 'RoyalPages:about' %}">About Us</a></li>
+          <li><a class="Gallery" href="#">Gallery</a></li>
+          <li><a class="Testing" href="#">Testing</a></li>
         </ul>
       </nav>
       {% block intro %}

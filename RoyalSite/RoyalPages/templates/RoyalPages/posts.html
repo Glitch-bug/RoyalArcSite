@@ -1,4 +1,11 @@
 {% extends 'RoyalPages/base.html' %}
+{% load static %}
+
+{% block intro %}
+  <section>
+    <h1>Blog Posts</h1>
+  </section>
+{% endblock intro %}
 
 {% block body %}
   <ul>
@@ -8,7 +15,8 @@
           <a href="{% url 'RoyalPages:blog' post.title %}">{{ post.title }}</a>&middot;
           <p> by Author | {{ post.date_added|date:'M d, Y H:i' }}</p>
         </div>
-        <p>{{ post.text }}...</p>
+        <div class="post-text">
+        <p>{{ post.text|linebreaks }}</p>
         <button><a href="{% url 'RoyalPages:blog' post.title %}">Read</a></button>
       </div>
     {% endfor %}
