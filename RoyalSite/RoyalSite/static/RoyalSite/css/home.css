@@ -20,10 +20,15 @@
     height: min-content;
     width: 100px;
     border: none;
-    color: white;
-    font-size: medium;
     transition: 0.5s;
 }
+
+.content > button > a {
+    text-decoration: none;
+    color: white;
+    font-size: medium;
+}
+
 
 .content > button:hover {
     background-color: purple;
@@ -58,4 +63,8 @@
     border-bottom: 3px purple solid;
     color: rgba(248, 252, 52, 0.6);
     width: 100%;
+}
+
+#info {
+    display: none;
 }

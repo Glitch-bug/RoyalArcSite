@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="{% static 'RoyalSite/images/royal_logo_link.png' %}">
     {% if home %}
       <link rel="stylesheet" type="text/css" href="{% static 'RoyalSite/css/home.css' %}">
+      <script src="{% static 'RoyalSite/js/home.js' %}"></script>
     {% elif posts %}
       <link rel="stylesheet" type="text/css" href="{% static 'RoyalSite/css/posts.css' %}">
     {% endif %}
@@ -21,7 +22,6 @@
           <li><a class="posts" href="{% url 'RoyalPages:posts' %}">Blog Posts</a></li>
           <li><a class="about" href="{% url 'RoyalPages:about' %}">About Us</a></li>
           <li><a class="Gallery" href="#">Gallery</a></li>
-          <li><a class="Testing" href="#">Testing</a></li>
         </ul>
       </nav>
       {% block intro %}

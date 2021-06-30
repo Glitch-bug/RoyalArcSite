@@ -1,8 +1,10 @@
 from django.shortcuts import render
-from .models import BlogPost
+from .models import BlogPost, AboutUs
 
 def home(request):
-    context = {'home': "home"}
+    abouts = AboutUs.objects.all()
+    starter = AboutUs.objects.get(order=1)
+    context = {'home':"home", 'abouts': abouts, 'starter': starter}
     return render(request, "RoyalPages/home.html", context)
 
 def about(request):
@@ -30,7 +32,7 @@ def extractor(array):
     return(array)
 
 def posts(request):
-    posts = BlogPost.objects.order_by('date_added')
+    posts = BlogPost.objects.order_by('date_added'.desc())
     posts = extractor(posts)
     context = {'posts': posts}
     return render(request, "RoyalPages/posts.html", context)

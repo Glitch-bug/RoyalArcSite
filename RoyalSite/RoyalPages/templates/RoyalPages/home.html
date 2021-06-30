@@ -10,6 +10,12 @@
       We truly believe our lovely clients have reputations for quality service and well maintained buildings. 
       The business case for clean and sanitary buildings is obvious, <b>get in touch with us today for a free quote.</b>
     </p>
-    <button>Contact Us</button>
+    <button><a href="tel:+233555506625">Contact Us</a></button>
   </div>
+  <ul id=info>
+    {% for item in abouts %}
+      <i>{{ item.title }}</i>
+      <p>{{ item.text }}</p>
+    {% endfor %}
+  </ul>
 {% endblock intro %}
