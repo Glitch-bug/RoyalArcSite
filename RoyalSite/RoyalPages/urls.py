@@ -5,7 +5,8 @@ from . import views
 app_name = "RoyalPages"
 urlpatterns = [
     path("", views.home, name="home"),
-    path("posts/<str:title>", views.blog_post, name="blog"),
-    path("posts", views.posts, name="posts"),
-    path("about us", views.about, name="about")
+    path("posts/<int:pk>", views.blog_post, name="blog"),
+    path("Posts", views.posts, name="posts"),
+    path("About us", views.about, name="about"),
+    path("Gallery", views.gallery, name="gallery")
 ]

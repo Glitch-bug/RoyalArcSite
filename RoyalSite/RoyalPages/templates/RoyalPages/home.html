@@ -3,8 +3,8 @@
 {% block intro %}
   <div class="content">
     <h1>Royal Arc Services</h1>
-    <i>Cleaning Service</i>
-    <p>
+    <i id='italic'>Cleaning Service</i>
+    <p id="shows">
       Managing a number of different properties can be a real balancing act. 
       You want to offer the best experience possible to your client or building, avoid unexpected problems, and save money. 
       We truly believe our lovely clients have reputations for quality service and well maintained buildings. 
@@ -12,10 +12,29 @@
     </p>
     <button><a href="tel:+233555506625">Contact Us</a></button>
   </div>
-  <ul id=info>
-    {% for item in abouts %}
-      <i>{{ item.title }}</i>
-      <p>{{ item.text }}</p>
-    {% endfor %}
+  <ul id='info'>
+
   </ul>
+  <script>
+    const data = '{{abouts_qs}}'
+    const rdata = JSON.parse(data.replace(/&quot;/ig, '"'))
+    let num = 0;
+    
+    function change() {
+      var text = rdata[num]['fields']['text']
+      var italics = rdata[num]['fields']['title']
+      document.getElementById('italic').innerHTML = italics
+      document.getElementById('shows').innerHTML = text;
+      if (num < rdata.length - 1) {
+        num++;
+      } else {
+        num = 0
+      }
+      
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      setInterval(change, 8000);
+    });
+  </script>
 {% endblock intro %}

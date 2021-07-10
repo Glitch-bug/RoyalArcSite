@@ -1,51 +1,51 @@
 {% extends 'RoyalPages/base.html' %}
 {% load static %}
 
+{% block intro %}
+<section>
+  <h1>About Us</h1>
+</section>
+{% endblock intro %}
 {% block body %}
-<h1 class="header">About Us</h1>
-<div class="bar">
-  <img src='{% static "RoyalSite/images/stain.jpg" %}'>
-  <div class="bar-info">
-    <i>Our Vision</i>
-    <p>
-    Royal ARC Cleaning Services seeks to professionally clean and service each of our customer’s facilities and buildings to the best of our abilities and in the highest standard possible so as to be in a better and respected position across African continent.
-    </p>
+<img id="background" src="{% static 'RoyalSite/images/architecture.jpg' %}">
+<div class="content">
+  <div id="left">
+    <ul id="left-list">
+
+    </ul>
+  </div>
+  <div id="right">
+    <ul id="right-list">
+
+    </ul>
   </div>
 </div>
-<div class="bar">
-  <img src="{% static 'RoyalSite/images/spiral.jpg' %}">
-  <div class="bar-info">
-    <i>Why choose us?</i>
-    <p>
-      We have the experience and skills necessary to tackle just about every type of job that comes our way. With Royal ARC Cleaning Services, clients know exactly what to expect - professionalism, efficiency and exceptional results.
-    </p>
-  </div>
-</div>
-<div class="bar">
-  <img src="{% static 'RoyalSite/images/glass.jpg' %}">
-  <div class="bar-info">
-    <i>Branding Process</i>
-    <p>
-      Since its founding, Royal ARC Cleaning Services has been one of the most trusted names in the industry. Hire us for this service and learn how we cater to the needs of each client, ensuring the results you need and deserve.
-    </p>
-  </div>
-</div>
-<div class="bar">
-  <img src="{% static 'RoyalSite/images/images.jpg' %}">
-  <div class="bar-info">
-    <i>The Royal Guarantee</i>
-    <p>
-      Royal ARC Cleaning Services is committed to getting the job done, especially when it comes to this service. You can count on us to be professional, timely, efficient and make sure you’re satisfied every step of the way.
-    </p>
-  </div>
-</div>
-<div class="bar">
-  <img src="{% static 'RoyalSite/images/index.jpg' %}">
-  <div class="bar-info">
-    <i>Our Mission</i>
-    <p>
-      We truly understand that our cherished customers want a hassle free experience and therefore Royal ARC Cleaning Services shall provide strong management and direction for each project to ensure services are delivered to customers in smooth and flexible manner.
-    </p>
-  </div>
-</div>
+<script>
+  const data = '{{abouts_qs}}'
+  const rdata = JSON.parse(data.replace(/&quot;/g, '"'))
+  length = Math.ceil(rdata.length/2)
+  var i = 0;
+  rdata.forEach(element => {
+    console.log(element.fields.title)
+  }); 
+  
+  rdata.forEach((e, index) => {if (index < length) {
+    const title = document.createElement('b')
+    title.innerHTML = e.fields.title
+    const text = document.createElement('p')
+    text.innerHTML = e.fields.text
+    document.getElementById('left-list').append(title)
+    document.getElementById('left-list').append(text)
+  }
+  else {
+    const title = document.createElement('b')
+    title.innerHTML = e.fields.title
+    const text = document.createElement('p')
+    text.innerHTML = e.fields.text
+    document.getElementById('right-list').append(title)
+    document.getElementById('right-list').append(text)
+  };
+  })
+  
+</script>
 {% endblock body %}

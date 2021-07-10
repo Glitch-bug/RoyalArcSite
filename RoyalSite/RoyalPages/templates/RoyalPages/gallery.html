@@ -1,0 +1,28 @@
+{% extends 'RoyalPages/base.html' %}
+
+{% block intro %}
+<section>
+  <h1>Gallery</h1>
+</section>
+{% endblock intro %}
+{% block body %}
+  <div class="gallery">
+    {% for image in gallery %}
+      <div class="img">
+        <img src='{{image.image.url}}' placeholder="image not found">
+        {% if image.title %}
+          <p class="title">{{image.title.title}}</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var title = document.querySelectorAll('.title');
+      title.forEach(ele => ele.style.display = 'none')
+    })
+    
+  </script>
+
+{% endblock body %}
+

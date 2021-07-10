@@ -11,6 +11,10 @@
       <script src="{% static 'RoyalSite/js/home.js' %}"></script>
     {% elif posts %}
       <link rel="stylesheet" type="text/css" href="{% static 'RoyalSite/css/posts.css' %}">
+    {% elif abouts %}
+      <link rel="stylesheet" type="text/css" href="{% static 'RoyalSite/css/about.css' %}">
+    {% elif gallery %}
+      <link rel="stylesheet" type="text/css" href="{% static 'RoyalSite/css/gallery.css' %}">
     {% endif %}
   </head>
   <body>
@@ -21,7 +25,7 @@
           <li><a class="home" href="{% url 'RoyalPages:home' %}">Home</a></li>
           <li><a class="posts" href="{% url 'RoyalPages:posts' %}">Blog Posts</a></li>
           <li><a class="about" href="{% url 'RoyalPages:about' %}">About Us</a></li>
-          <li><a class="Gallery" href="#">Gallery</a></li>
+          <li><a class="Gallery" href="{% url 'RoyalPages:gallery' %}">Gallery</a></li>
         </ul>
       </nav>
       {% block intro %}

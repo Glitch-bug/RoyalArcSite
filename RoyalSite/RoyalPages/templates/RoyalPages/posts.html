@@ -12,12 +12,15 @@
     {% for post in posts %}
       <div class="post">
         <div class="post-info">
-          <a href="{% url 'RoyalPages:blog' post.title %}">{{ post.title }}</a>&middot;
+          <a href="{% url 'RoyalPages:blog' post.pk %}">{{ post.title }}</a>&middot;
           <p> by Author | {{ post.date_added|date:'M d, Y H:i' }}</p>
         </div>
         <div class="post-text">
         <p>{{ post.text|linebreaks }}</p>
-        <button><a href="{% url 'RoyalPages:blog' post.title %}">Read</a></button>
+        <div class="buttons">
+          <div class="views">{{post.views}}</div>
+          <button><a href="{% url 'RoyalPages:blog' post.pk %}">Read</a></button>
+        </div>
       </div>
     {% endfor %}
   </ul>

@@ -44,7 +44,8 @@
     align-self: center;
     justify-content: center;
     align-items: center;
-    color: rgb(165, 100, 100);
+    color: rgb(97, 40, 105);
+    font-size: 20px;
 }
 
 .content > h1 {
@@ -55,7 +56,7 @@
 }
 
 .content > i {
-    font-size: 65px;
+    font-size: 60px;
     color: rgb(119, 119, 114);
 }
 
@@ -66,5 +67,6 @@
 }
 
 #info {
-    display: none;
+    position: fixed;
+    visibility: hidden;
 }

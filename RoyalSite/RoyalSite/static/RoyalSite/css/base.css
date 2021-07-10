@@ -37,7 +37,7 @@ img {
 .navbar > ul > li > a {
     text-decoration: none; 
     color: white;
-    font-size: 20px;
+    font-size: 22px;
     width: 0;
     font-family: 'Roboto', sans-serif;
     transition: 0.4s;
@@ -57,7 +57,7 @@ body {
 }
 
 section {
-    background-color: grey;
+    background-color: rgb(52, 52, 62);
     height: 200px;
     display: flex;
     align-items: center;
@@ -65,7 +65,9 @@ section {
 
 section > h1 {
     font-size: 40px;
+    color: white;
     font-family: 'Roboto', sans-serif;
+    margin-left: 10px;
 }
 
 section > img {
