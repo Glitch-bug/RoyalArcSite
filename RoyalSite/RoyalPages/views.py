@@ -2,6 +2,7 @@ import json
 import re
 from math import floor, ceil
 
+from django.http import JsonResponse
 from django.core import serializers
 from django.shortcuts import render
 
@@ -28,7 +29,7 @@ def blog_post(request, pk):
     return render(request, "RoyalPages/post.html", context)
 
 def prep_json(query_set):
-    case = re.compile('\s')
+    case = re.compile(r'\s')
     briefcase = []
     for item in query_set:
         item.text = item.text.replace('\r', '\\r')
@@ -42,14 +43,28 @@ def prep_json(query_set):
     query_set = serializers.serialize("json", query_set)
     return query_set
 
-def extractor(array):
+def prep_jsons(query_set):
+    briefcase = []
+    dots = re.compile(r'\\.')
+    for item in query_set:
+        item.title = re.escape(item.title)
+        item.title = item.title.replace('\ ', ' ')
+        item.title = dots.sub('.', item.title)
+        item.title = item.title.replace('.\\', '.')
+        item.text = re.escape(item.text)
+        item.text = item.text.replace('\ ', ' ')
+        item.text =  dots.sub('.', item.text)
+        item.text = item.text.replace('.\\', '.')
+    query_set = serializers.serialize("json", query_set)
+    return query_set
+
+def extractor(array, num):
     boolean = False
     for item in array:
         item.title = item.title.title()
         item.text = item.text.split()
-        item.text = item.text[:100]
-        print(len(item.text))
-        if len(item.text) == 100:
+        item.text = item.text[:10 * num]
+        if len(item.text) == 10 * num:
             boolean = True
         item.text = ' '.join(item.text)
         if boolean:
@@ -60,15 +75,39 @@ def extractor(array):
 def posts(request):
     posts = BlogPost.objects.order_by('-date_added')
     popular = BlogPost.objects.order_by('views')
-    popular = prep_json(popular)
-    posts = extractor(posts)
-    context = {'posts': posts, 'popular': popular}
+    popular = extractor(popular, 2)
+    posts = extractor(posts, 10)
+    popular_qs = prep_jsons(popular)
+    context = {'posts': posts, 'popular': popular, 'popular_qs': popular_qs}
+    print(popular_qs)
     return render(request, "RoyalPages/posts.html", context)
 
 def gallery(request):
     gallery = Image.objects.order_by('-id')
     context = {'gallery': gallery}
     return render(request, "RoyalPages/gallery.html", context)
+
+def search_results(request):
+    if request.is_ajax():
+        post = request.POST.get('post')
+        qs = extractor(BlogPost.objects.filter(title__icontains=post), 2)
+        if len(qs) > 0 and len(post) > 0:
+            data = []
+            for pos in qs:
+                item = {
+                    'pk': pos.pk,
+                    'title': pos.title,
+                    'text': pos.text,
+                    # 'cover': str(pos.cover.url),
+                    'date_added': pos.date_added,
+                    'views': pos.views
+                }
+                data.append(item)
+            res = data
+        else:
+            res = 'No posts found...'
+        return JsonResponse({'data': res})
+    return JsonResponse({})
 
 def add_posts(request):
     pass

@@ -4,4 +4,5 @@
 <h3> Topic: {{ post.title }} </h3>
 
 <p> {{ post.text|linebreaks }}</p>
+<button><a href="{% url 'RoyalPages:posts' %}">Return</a></button>
 {% endblock body %}

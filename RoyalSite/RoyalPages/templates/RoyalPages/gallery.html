@@ -6,10 +6,19 @@
 </section>
 {% endblock intro %}
 {% block body %}
+  <div class="fullImage">
+    <img class="fImg" src="/RoyalSite/images/RoyalSite/static/RoyalSite/images/gallery/WhatsApp_Image_2021-06-19_at_21.06.23_1.jpeg" placeholder="image not found">
+    <span onclick="closeFullImg()">X</span>
+    <div class="buttons">
+        <button class="butt" onclick=""><img src="/RoyalSite/images/RoyalSite/static/RoyalSite/images/left-arrow.png"></button>
+        <!-- <button onclick=""></button>
+        <input type="image" src="/RoyalSite/images/RoyalSite/static/RoyalSite/images/left-arrow.png"> -->
+    </div>
+  </div>
   <div class="gallery">
     {% for image in gallery %}
       <div class="img">
-        <img src='{{image.image.url}}' placeholder="image not found">
+        <img class="cImg" src='{{image.image.url}}' placeholder="image not found" onclick="openFullImg(this.src)">
         {% if image.title %}
           <p class="title">{{image.title.title}}</p>
         {% endif %}
@@ -21,6 +30,21 @@
       var title = document.querySelectorAll('.title');
       title.forEach(ele => ele.style.display = 'none')
     })
+
+    var fullImageSet = document.getElementsByClassName('fullImage')[0]
+    var navBar = document.getElementsByClassName('navbar')[0]
+    var img = fullImageSet.childNodes[1]
+
+    function closeFullImg() {
+      fullImageSet.style.display = 'none'
+      navBar.style.display = 'flex'
+    }
+
+    function openFullImg(src) {
+      fullImageSet.style.display = 'flex'
+      navBar.style.display = 'none'
+      img.src = src
+    }
     
   </script>
 

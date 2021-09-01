@@ -8,20 +8,42 @@
 {% endblock intro %}
 
 {% block body %}
-  <ul>
-    {% for post in posts %}
-      <div class="post">
-        <div class="post-info">
-          <a href="{% url 'RoyalPages:blog' post.pk %}">{{ post.title }}</a>&middot;
-          <p> by Author | {{ post.date_added|date:'M d, Y H:i' }}</p>
+  <div class="main">
+    <div class="posts">
+    <ul>
+      {% for post in posts %}
+        <div class="post">
+          <div class="post-info">
+            <a href="{% url 'RoyalPages:blog' post.pk %}">{{ post.title }}</a>&middot;
+            <p> by Author | {{ post.date_added|date:'M d, Y H:i' }}</p>
+          </div>
+          <div class="post-text">
+          <p>{{ post.text|linebreaks }}</p>
+          <div class="buttons">
+            <div class="views">Views: {{post.views}}</div>
+            <button><a href="{% url 'RoyalPages:blog' post.pk %}">Read</a></button>
+          </div>
         </div>
-        <div class="post-text">
-        <p>{{ post.text|linebreaks }}</p>
-        <div class="buttons">
-          <div class="views">{{post.views}}</div>
-          <button><a href="{% url 'RoyalPages:blog' post.pk %}">Read</a></button>
-        </div>
-      </div>
-    {% endfor %}
-  </ul>
+      {% endfor %}
+    </ul>
+    </div>
+    <div class="search-sec">
+      <form id="search-form" autocomplete="off">
+        {% csrf_token %}
+        <input type="text" id="search-input" class="search" placeholder="Search Posts">
+      </form>
+      <p id='list-title'>Popular Posts</p>
+      <ul id="list">
+      {% for item in popular %}
+        <li><a href="{% url 'RoyalPages:blog' item.pk %}">{{ item.title }}</a><br /> {{ item.text }}</li>
+      {% empty %}
+        No posts...
+      {% endfor %}      
+      </ul>
+    </div>
+  </div>
+  <script>const ata = '{{popular_qs}}'</script>
+  <script src="{% static 'RoyalSite/js/jquery.js' %}"></script>
+  <script src="{% static 'RoyalSite/js/posts.js' %}"></script>
 {% endblock body %}
+

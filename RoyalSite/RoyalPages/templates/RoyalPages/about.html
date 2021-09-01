@@ -25,9 +25,6 @@
   const rdata = JSON.parse(data.replace(/&quot;/g, '"'))
   length = Math.ceil(rdata.length/2)
   var i = 0;
-  rdata.forEach(element => {
-    console.log(element.fields.title)
-  }); 
   
   rdata.forEach((e, index) => {if (index < length) {
     const title = document.createElement('b')
