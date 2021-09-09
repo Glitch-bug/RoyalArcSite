@@ -40,12 +40,14 @@ img {
     font-size: 22px;
     width: 0;
     font-family: 'Roboto', sans-serif;
-    transition: border-width  0.4s;
+    border-bottom: 3px purple solid;
+    border-bottom-width: 0;
+    transition: border-bottom-width  0.4s linear;
 } 
 
 
 .navbar > ul > li > a:hover {
-    border-bottom: 3px purple solid;
+    border-bottom-width: inherit;
     color: rgba(248, 252, 52, 0.6);
     width: 100%;
 
