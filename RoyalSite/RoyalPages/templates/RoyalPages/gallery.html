@@ -15,6 +15,13 @@
     </div>
   </div>
   <div class="gallery" id='gala'>
+    {% for image in gallery %}
+    <div>
+      <img src='{{ image.image }}'>
+    </div>
+    {% empty %}
+      <p>No Images have been posted to the gallery yet...</p>
+    {% endfor %}
   </div>
   <script>
     var fullImageSet = document.getElementsByClassName('fullImage')[0]
@@ -24,23 +31,23 @@
     var id = 0
     var gala = document.getElementById('gala')
     var data = '{{ gallery_qs }}'
-    data = JSON.parse(data.replace(/&quot;/g, '"'))
-    for (item in data) {
-      // if (data[item].fields.title){
-      //   var div = `<div><img class='cImg' src='${data[item].fields.image}' placeholder='image not found' onclick='openFullImg(${data[item].fields.image}, ${data[item].fields.pk})'><p>${data[item].fields.title}</p></div>`
-      // }else {
-      //   var div = `<div><img class='cImg' src='${data[item].fields.image}' placeholder='image not found' onclick='openFullImg(${data[item].fields.image}, ${data[item].fields.pk})'></div>`
-      // }
-      let img = document.createElement('img')
-      img.src = data[item].fields.image
-      // let div = document.createElement('div')
-      // div.append(img)
-      // if (data[item].fields.title){
-      //   div.append(`<p>${data[item].fields.title}</p>`)
-      // };
-      gala.append(img)
-      console.log(gala.childNodes)
-    };
+    // data = JSON.parse(data.replace(/&quot;/g, '"'))
+    // for (item in data) {
+    //   // if (data[item].fields.title){
+    //   //   var div = `<div><img class='cImg' src='${data[item].fields.image}' placeholder='image not found' onclick='openFullImg(${data[item].fields.image}, ${data[item].fields.pk})'><p>${data[item].fields.title}</p></div>`
+    //   // }else {
+    //   //   var div = `<div><img class='cImg' src='${data[item].fields.image}' placeholder='image not found' onclick='openFullImg(${data[item].fields.image}, ${data[item].fields.pk})'></div>`
+    //   // }
+    //   let img = document.createElement('img')
+    //   img.src = data[item].fields.image
+    //   // let div = document.createElement('div')
+    //   // div.append(img)
+    //   // if (data[item].fields.title){
+    //   //   div.append(`<p>${data[item].fields.title}</p>`)
+    //   // };
+    //   gala.append(img)
+    //   console.log(gala.childNodes)
+    // };
     document.addEventListener("DOMContentLoaded", function() {
       // var title = document.querySelectorAll('.title');
       // title.forEach(ele => ele.style.display = 'none')
