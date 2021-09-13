@@ -5,13 +5,13 @@ var fullImageSet = document.getElementsByClassName('fullImage')[0]
     var gala = document.getElementById('gala')
     var data = '{{ gallery_qs }}'
     var id = 0
-    var slide = False
-  
+    var slide_info = document.getElementById('slide-info')
 
 
     function closeFullImg() {
       fullImageSet.style.display = 'none'
       navBar.style.display = 'flex'
+      stop()
     }
 
     function openFullImg(src, did) {
@@ -19,15 +19,12 @@ var fullImageSet = document.getElementsByClassName('fullImage')[0]
       navBar.style.display = 'none'
       img.src = src
       id = did
-      console.log(id)
     }
 
     function prev() {
       if (id < images.length) {
         src = document.getElementById(id+1).src
-        console.log(img.src)
         img.src = src
-        console.log(img.src)
         id += 1
       }else {
         src = document.getElementById(1).src
@@ -38,9 +35,7 @@ var fullImageSet = document.getElementsByClassName('fullImage')[0]
     function next() {
       if (id > 1) {
         src = document.getElementById(id-1).src
-        console.log(img.src)
         img.src = src
-        console.log(img.src)
         id -= 1
         
       }else {
@@ -48,6 +43,19 @@ var fullImageSet = document.getElementsByClassName('fullImage')[0]
         img.src = src
         id = images.length
       }
-      console.log(id)
     };
+
+    function slide() {
+      // slider.name = "stop-circle-outline"
+      // slider.onclick = 'stop()'
+      document.getElementById('slide').outerHTML ='<ion-icon id="slide" name="stop-circle-outline" onclick="stop()"></ion-icon>'
+      intId = setInterval(next, 2500)
+      slide_info.innerHTML = "end slideshow"
+    }
+    
+    function stop() {
+      document.getElementById('slide').outerHTML ='<ion-icon id="slide" name="caret-forward-circle-outline" onclick="slide()"></ion-icon>'
+      slide_info.innerHTML = "slideshow"
+      clearInterval(intId)
+    }
     
