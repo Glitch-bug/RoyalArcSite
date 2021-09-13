@@ -1,4 +1,5 @@
 {% extends 'RoyalPages/base.html' %}
+{% load static %}
 
 {% block intro %}
 <section>
@@ -8,92 +9,25 @@
 {% block body %}
   <div class="fullImage">
     <img class="fImg" src="/RoyalSite/images/RoyalSite/static/RoyalSite/images/gallery/WhatsApp_Image_2021-06-19_at_21.06.23_1.jpeg" placeholder="image not found">
-    <span onclick="closeFullImg()">X</span>
+    <span id='close' onclick="closeFullImg()">X</span>
     <div class="buttons">
-        <button class="butt" onclick="prev()"><img src="/RoyalSite/images/RoyalSite/static/RoyalSite/images/left-arrow.png"></button>
-        <button class="butt" onclick="next()"><img src="/RoyalSite/images/RoyalSite/static/RoyalSite/images/right-arrow.png"></button>
+      <div><ion-icon name="chevron-back-outline" onclick="prev()" ></ion-icon><p class="tooltip">previous</p></div>
+      <div><ion-icon name="caret-forward-circle-outline" onclick="slide()"></ion-icon><p class="tooltip">slideshow</p></div>
+      <div><ion-icon name="chevron-forward-outline" onclick="next()"></ion-icon><p class="tooltip">next</p></div>
     </div>
   </div>
   <div class="gallery" id='gala'>
     {% for image in gallery %}
-    <div>
-      <img src='{{ image.image }}'>
+    <div class="img">
+      <img id="{{image.pk}}" class="cImg" src='{{image.image.url}}' placeholder="image not found" onclick="openFullImg(this.src, this.id)">
+      {% if image.title %}
+        <p class="tooltip">{{image.title.title}}</p>
+      {% endif %}
     </div>
     {% empty %}
       <p>No Images have been posted to the gallery yet...</p>
     {% endfor %}
   </div>
-  <script>
-    var fullImageSet = document.getElementsByClassName('fullImage')[0]
-    var navBar = document.getElementsByClassName('navbar')[0]
-    var img = fullImageSet.childNodes[1]
-    var images = document.getElementsByClassName('cImg')
-    var id = 0
-    var gala = document.getElementById('gala')
-    var data = '{{ gallery_qs }}'
-    // data = JSON.parse(data.replace(/&quot;/g, '"'))
-    // for (item in data) {
-    //   // if (data[item].fields.title){
-    //   //   var div = `<div><img class='cImg' src='${data[item].fields.image}' placeholder='image not found' onclick='openFullImg(${data[item].fields.image}, ${data[item].fields.pk})'><p>${data[item].fields.title}</p></div>`
-    //   // }else {
-    //   //   var div = `<div><img class='cImg' src='${data[item].fields.image}' placeholder='image not found' onclick='openFullImg(${data[item].fields.image}, ${data[item].fields.pk})'></div>`
-    //   // }
-    //   let img = document.createElement('img')
-    //   img.src = data[item].fields.image
-    //   // let div = document.createElement('div')
-    //   // div.append(img)
-    //   // if (data[item].fields.title){
-    //   //   div.append(`<p>${data[item].fields.title}</p>`)
-    //   // };
-    //   gala.append(img)
-    //   console.log(gala.childNodes)
-    // };
-    document.addEventListener("DOMContentLoaded", function() {
-      // var title = document.querySelectorAll('.title');
-      // title.forEach(ele => ele.style.display = 'none')
-      for (let i = 0; i< images.length; i++){
-        images[i].id = i
-      }
-    });
-  
-
-
-    function closeFullImg() {
-      fullImageSet.style.display = 'none'
-      navBar.style.display = 'flex'
-    }
-
-    function openFullImg(src, id) {
-      fullImageSet.style.display = 'flex'
-      navBar.style.display = 'none'
-      img.src = src
-      id = id
-    }
-
-    function next() {
-      console.log(id)
-      if (id < images.length - 1) {
-        console.log(img.src)
-        src = document.getElementById(id+1).src
-        img.src = src
-        id += 1
-      }else {
-        src = document.getElementById(0).src
-        // img.src = src
-      }
-    }
-
-    function prev() {
-      if (img.id > 0) {
-        src = document.getElementById(images.length-1).src
-        // img.src = src
-      }else {
-        src = document.getElementById(img.id - 1).src
-        // img.src = src
-      }
-    }
-    
-  </script>
-
+  <script src="{% static 'RoyalSite/js/gallery.js' %}"></script>
 {% endblock body %}
 

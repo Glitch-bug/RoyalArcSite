@@ -86,6 +86,8 @@ def gallery(request):
     gallery = Image.objects.order_by('-id')
     gallery_qs = serializers.serialize("json", gallery)
     context = {'gallery': gallery, "gallery_qs": gallery_qs}
+    for item in list(gallery):
+        print(item)
     return render(request, "RoyalPages/gallery.html", context)
 
 def search_results(request):

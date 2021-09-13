@@ -23,12 +23,20 @@
     z-index: 50;
 }
 
+ion-icon {
+    font-size:32px;
+    color: white;
+    margin-right: 5px;
+    background-color: transparent;
+}
+
 .fImg{
     width: 90%;
     max-width: 500px;
+    max-height: 500px;
 }
 
-.fullImage > span {
+.fullImage > #close {
     color: white;
     position: fixed;
     top: 5%;
@@ -66,24 +74,43 @@ body {
     width: 100%;
 }
 
-.buttons {
+
+.but{
     display: flex;
-    justify-content: space-around;
-    height: fit-content;
-    width: inherit;
-}
-
-.buttons > .butt > img {
-    height:32px;
-    width: 32px;
-}
-
-.butt{
     background-color: transparent;
     border: none;
+    flex-direction: row;
+    background-color: transparent;
 }
+
 
 .title {
     display: none;
+    text-align: center;
 }
 
+.img:hover > .title {
+    display: inline;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.tooltip {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+}
+
+div:hover > .tooltip {
+    visibility: visible;
+}
