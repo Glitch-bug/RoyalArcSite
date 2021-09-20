@@ -1,8 +1,34 @@
 {% extends 'RoyalPages/base.html' %}
 
-{% block body %}
-<h3> Topic: {{ post.title }} </h3>
 
-<p> {{ post.text|linebreaks }}</p>
-<button><a href="{% url 'RoyalPages:posts' %}">Return</a></button>
+{% block intro %}
+    <section>
+        <h1>Blog Post</h1>
+    </section>
+{% endblock intro %}
+
+
+{% block body %}
+<div id="title">
+  <h3>Topic: {{ post.title }} / by Hassan Iffid</h3>
+</div>
+<div id="content">
+  
+
+
+
+  <p> {{ post.text|linebreaks }}</p>
+  <button><a href="{% url 'RoyalPages:posts' %}">Return</a></button>
+  </br>
+  <div id="cusdis_thread"
+  data-host="https://cusdis.com"
+  data-app-id="ee76089d-c370-4c7c-82d4-65e2d9e0ae7e"
+  data-page-id="{{ post.pk }}"
+  data-page-url="{% url 'RoyalPages:blog' post.pk %}"
+  data-page-title="{{ post.title }}"
+></div>
+
+</div>
+
+<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 {% endblock body %}

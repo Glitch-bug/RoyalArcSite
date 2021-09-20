@@ -1,4 +1,5 @@
 import json
+import os
 import re
 from math import floor, ceil
 
@@ -10,6 +11,7 @@ from .models import BlogPost, AboutUs, Image
 
 def home(request):
     abouts = AboutUs.objects.all()
+    abouts = filename(abouts)
     abouts_qs = prep_json(abouts)
     context = {'home':"home", 'abouts': abouts, 'abouts_qs': abouts_qs}
     return render(request, "RoyalPages/home.html", context)
@@ -26,7 +28,14 @@ def blog_post(request, pk):
     post.views = post.views + 1
     post.save()
     context = {'post': post}
+    print(post)
     return render(request, "RoyalPages/post.html", context)
+
+def filename(query_set):
+    for item in query_set:
+        print(item.background)
+        item.background = os.path.basename(str(item.background))
+    return query_set
 
 def prep_json(query_set):
     case = re.compile(r'\s')
@@ -74,7 +83,7 @@ def extractor(array, num):
 
 def posts(request):
     posts = BlogPost.objects.order_by('-date_added')
-    popular = BlogPost.objects.order_by('views')
+    popular = BlogPost.objects.order_by('-views')
     popular = extractor(popular, 2)
     posts = extractor(posts, 10)
     popular_qs = prep_jsons(popular)

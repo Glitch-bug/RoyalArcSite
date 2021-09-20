@@ -5,6 +5,7 @@ class AboutUs(models.Model):
     title = models.CharField(max_length=200)
     order = models.IntegerField()
     text = models.TextField()
+    background = models.ImageField(upload_to="RoyalSite/static/RoyalSite/css/", default="RoyalSite/static/RoyalSite/images/gallery/x.png")
     def __str__(self):
         """Returns a string representation of the model"""
         return f"{self.title[:50]} ({self.order})"

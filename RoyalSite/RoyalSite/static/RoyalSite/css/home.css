@@ -1,4 +1,4 @@
-.wrapper {
+#wrapper {
     background-image: url("background.jpg");
     background-size: cover;
     height: 100vh;
@@ -18,9 +18,11 @@
     background-color: blueviolet;
     border-radius: 5px;
     height: min-content;
-    width: 120px;
+    width: fit-content;
     border: none;
     transition: 0.5s;
+    cursor: pointer;
+    
 }
 
 ion-icon {

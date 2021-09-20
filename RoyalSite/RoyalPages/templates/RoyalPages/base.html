@@ -15,10 +15,12 @@
       <link rel="stylesheet" type="text/css" href="{% static 'RoyalSite/css/about.css' %}">
     {% elif gallery %}
       <link rel="stylesheet" type="text/css" href="{% static 'RoyalSite/css/gallery.css' %}">
+    {% elif post %}
+      <link rel='stylesheet' type="text/css" href="{% static 'RoyalSite/css/post.css' %}">
     {% endif %}
   </head>
   <body>
-    <div class="wrapper">
+    <div id="wrapper">
       <nav class="navbar">
         <img id="logo" src="{% static 'RoyalSite/images/royal.png' %}">
         <ul>
