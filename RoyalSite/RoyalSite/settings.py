@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
+import django_heroku
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -24,7 +26,7 @@ SECRET_KEY = 'django-insecure-2&!01)#1ic=+ibco9bwfl)_3kodw#1%@b1#*udlas7g-a^z#z%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -76,10 +78,20 @@ WSGI_APPLICATION = 'RoyalSite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    'defualt':{
+        'ENGINE': 'django.db.backends.postgresgl_psycopg2',
+        'NAME': 'd964ns2675vt2g',
+        'USER':'ebfkgjroezbjgx',
+        'PASSWORD':'6a970cd64aefe165c94e279196d7fe1e1b9cba9f32f3fc550dc4e07adfd94f2b',
+        'HOST':'ec2-54-145-110-118.compute-1.amazonaws.com',
+        'PORT':'5432',
     }
 }
 
@@ -120,8 +132,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, '/static/')
 STATIC_URL = '/static/'
 MEDIA_URL = 'RoyalSite/images/'
+django_heroku.settings(locals())
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
