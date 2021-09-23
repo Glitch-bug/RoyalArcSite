@@ -32,14 +32,16 @@
         {% csrf_token %}
         <input type="text" id="search-input" class="search" placeholder="Search Posts">
       </form>
-      <p id='list-title'>Popular Posts</p>
-      <ul id="list">
-      {% for item in popular %}
-        <li><a href="{% url 'RoyalPages:blog' item.pk %}">{{ item.title }}</a><br /> {{ item.text }}</li>
-      {% empty %}
-        No posts...
-      {% endfor %}      
-      </ul>
+      <div id='search-items'>
+        <p id='list-title'>Popular Posts</p>
+        <ul id="list">
+        {% for item in popular %}
+          <li><a href="{% url 'RoyalPages:blog' item.pk %}">{{ item.title }}</a><br /> <i class="list-item">{{ item.text }}</i></li>
+        {% empty %}
+          No posts...
+        {% endfor %}      
+        </ul>
+        </div>
     </div>
   </div>
   <script>const ata = '{{popular_qs}}'</script>

@@ -35,13 +35,13 @@ const sendSearchData = (post) => {
                         // console.log(divP)
                         // listItem.appendChild = divA
                         // listItem.appendChild = divP
-                        list.innerHTML += `<li><a href="${url}${loc}">${title}</a><br />${text}</li>`
+                        document.getElementById('list').innerHTML += `<li><a href="posts/${loc}">${title}</a><br /><i class='list-item'>${text}</i></li>`
                     }) 
                 
                 }
             }else{
                 
-                list.innerHTML = `<li><b>${data}</b></li>`
+                document.getElementById('list').innerHTML = `<li><b>${data}</b></li>`
             };
 
         },
@@ -57,23 +57,36 @@ document.addEventListener("keyup", e=>{
         sendSearchData(e.target.value)
     } else if (e.target.value == '') {
         listTitle.innerHTML = 'Popular Posts'
-        list.innerHTML = '' 
-        console.log(ata)
+        document.getElementById('list').innerHTML = '' 
         const rdata = JSON.parse(ata.replace(/&quot;/g, '"'))
         console.log(rdata)
         rdata.forEach(d => {if (d) {
             var title = d.fields.title
-            var text = d.fields.text 
+            var text = d.fields.text
+            var loc = d.pk 
             // divA.innerHTML = title 
             // divP.innerHTML = text
             // console.log(divP)
             // listItem.appendChild = divA
             // listItem.appendChild = divP
-            list.innerHTML += `<li>${title}<br />${text}</li>`}
+            document.getElementById('list').innerHTML += `<li><a  href='posts/${loc}'>${title}</a><br /><i class='list-item'>${text}</i></li>`}
             else{
-                list.innerHTML = 'No posts...'
+                document.getElementById('list').innerHTML = 'No posts...'
             }
         });
     }
 
 });
+
+
+
+$(function(){
+    $('#search-form').click(function(){
+    var query = window.matchMedia('(max-width:480px)');
+    if(query.matches){
+        $('#search-items').slideToggle(500);
+    }
+    });
+})
+
+

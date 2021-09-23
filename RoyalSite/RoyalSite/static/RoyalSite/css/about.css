@@ -58,6 +58,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+    pointer-events: none;
     z-index: -1;
 }
 
@@ -65,4 +66,23 @@ body {
     border-bottom: 3px purple solid;
     color: rgba(248, 252, 52, 0.6);
     width: 100%;
+}
+
+
+/* Phone */
+@media screen and (max-width:480px) {
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #left {
+        width: 90vw;
+    }
+
+    #right {
+        width: 90vw;
+    }
 }

@@ -101,7 +101,7 @@ post {
     
 }
 
-.search-sec > p {
+.search-sec  p {
     font-size: bold;
     color: white;
     background-color: blueviolet;
@@ -123,11 +123,62 @@ li {
     padding: 20px 5px 20px;
 }
 
-.search-sec > ul > li > a {
+.search-sec  ul > li > a {
     display: block;
     background-color: lightgrey;
     text-decoration: none;
     font-weight: bold;
     color: purple;
     padding-left: 5px; 
+}
+
+/* Phones */
+@media screen and (max-width:480px) {
+    /* Body */
+    .search-sec {
+        display: block;
+        order: 0;
+        width: 100%;
+        background-color: darkgrey;
+        z-index: 2;
+    }
+
+    .search-sec * {
+        margin: 0px;
+    }
+
+    .search-sec > #search-items {
+        display: none;
+        position: absolute;
+        background-color: darkgrey;
+        max-height: 300px;
+        overflow-y:scroll;
+        margin: 0px;
+    }
+
+
+    .main {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .search-sec  #search-form {
+        display: block;
+        padding: 0px;
+        margin: 0px;
+    } 
+    
+    .search-sec a {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    li {
+        padding: 5px 5px 5px;
+    }
+
+    .posts {
+        order: 1;
+    }
 }

@@ -1,5 +1,5 @@
 {% extends 'RoyalPages/base.html' %}
-
+{% load static %}
 
 {% block intro %}
     <section>
@@ -9,24 +9,23 @@
 
 
 {% block body %}
-<div id="title">
-  <h3>Topic: {{ post.title }} / by Hassan Iffid</h3>
-</div>
+<img id="background" src="{% static 'RoyalSite/images/glass.jpg' %}">
+
 <div id="content">
-  
+  <div id="title">
+    <h3>Topic: {{ post.title }} / by Hassan Iffid</h3>
+  </div>
 
-
-
-  <p> {{ post.text|linebreaks }}</p>
-  <button><a href="{% url 'RoyalPages:posts' %}">Return</a></button>
-  </br>
+  <div id="page">
+    <p> {{ post.text|linebreaks }}</p>
+    <button><a href="{% url 'RoyalPages:posts' %}">Return</a></button>
+  </div>
   <div id="cusdis_thread"
   data-host="https://cusdis.com"
   data-app-id="ee76089d-c370-4c7c-82d4-65e2d9e0ae7e"
   data-page-id="{{ post.pk }}"
   data-page-url="{% url 'RoyalPages:blog' post.pk %}"
-  data-page-title="{{ post.title }}"
-></div>
+  data-page-title="{{ post.title }}"></div>
 
 </div>
 

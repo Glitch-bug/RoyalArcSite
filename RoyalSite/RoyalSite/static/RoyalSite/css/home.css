@@ -1,3 +1,6 @@
+/* Laptop Screen size */
+
+/* Header */
 #wrapper {
     background-image: url("background.jpg");
     background-size: cover;
@@ -8,7 +11,13 @@
     flex-direction: column;
     
 }
+.navbar > ul > li > a.home {
+    border-bottom: 3px purple solid;
+    color: rgba(248, 252, 52, 0.6);
+    width: 100%;
+}
 
+/* Body */
 .content > button {
     display: flex;
     flex-direction: row;
@@ -68,13 +77,27 @@ ion-icon {
     color: rgb(119, 119, 114);
 }
 
-.navbar > ul > li > a.home {
-    border-bottom: 3px purple solid;
-    color: rgba(248, 252, 52, 0.6);
-    width: 100%;
-}
+
 
 #info {
     position: fixed;
     visibility: hidden;
+}
+
+/* Phone */
+@media screen and (max-width:480px){
+    
+
+    /* Body */
+    .content {
+        font-size: 13;
+    }
+
+    .content > h1 {
+        font-size: 32px;
+    }
+
+    .content > i {
+        font-size: 22px;
+    }
 }
