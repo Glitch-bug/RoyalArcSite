@@ -1,7 +1,5 @@
 
 
-
-
 .navbar > ul > li > a.posts {
     border-bottom: 3px purple solid;
     color: rgba(248, 252, 52, 0.6);
@@ -60,7 +58,7 @@ body{
     margin-bottom: 15px;
     background-color: white;
     padding: 30px;
-
+    width: 100%;
 }
 
 
