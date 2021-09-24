@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn RoyalSite.wsgi.application --log-file=-
+web: gunicorn RoyalSite.wsgi --log-file=-
