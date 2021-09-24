@@ -84,6 +84,16 @@ body{
     border: 2px solid white;
 }
 
+#comments {
+    color: white;
+    border: 2px solid white;
+    padding: 3px 0px 3px 7px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    display: block;
+    width: 100%;
+}
+
 /* Phone */
 @media screen and (max-width:480px){
     #content {
