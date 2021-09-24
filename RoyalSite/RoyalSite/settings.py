@@ -85,8 +85,8 @@ WSGI_APPLICATION = 'RoyalSite.wsgi.application'
 #     }
 # }
 DATABASES = {
-    'defualt':{
-        'ENGINE': 'django.db.backends.postgresgl_psycopg2',
+    'default':{
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'd964ns2675vt2g',
         'USER':'ebfkgjroezbjgx',
         'PASSWORD':'6a970cd64aefe165c94e279196d7fe1e1b9cba9f32f3fc550dc4e07adfd94f2b',
