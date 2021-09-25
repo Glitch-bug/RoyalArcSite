@@ -8,6 +8,16 @@ var id = 0
 var slide_info = document.getElementById('slide-info')
 
 
+document.addEventListener('DOMContentLoaded', function(){
+  var cala = document.querySelector('#gala')
+  var imgContainers = cala.querySelectorAll('.img')
+  for (i=0; i<imgContainers.length; i++){
+     pimg = imgContainers[i].querySelector('.cImg')
+     cala.querySelectorAll('.img')[i].querySelector('.cImg').outerHTML = `<img id="${i+1}" class="cImg" src='${pimg.src}' placeholder="image not found" onclick="openFullImg(this.src, this.id)"></img>`
+  }
+  console.log(document.querySelectorAll('.cImg'))
+});
+
 function closeFullImg() {
   fullImageSet.style.display = 'none'
   navBar.style.display = 'flex'
@@ -19,6 +29,7 @@ function openFullImg(src, did) {
   navBar.style.display = 'none'
   img.src = src
   id = did
+  console.log()
 }
 
 function prev() {

@@ -30,7 +30,6 @@ def blog_post(request, pk):
     post.views = post.views + 1
     post.save()
     context = {'post': post}
-    print(post)
     return render(request, "RoyalPages/post.html", context)
 
 def filename(query_set):
@@ -97,8 +96,6 @@ def gallery(request):
     gallery = Image.objects.order_by('-id')
     gallery_qs = serializers.serialize("json", gallery)
     context = {'gallery': gallery, "gallery_qs": gallery_qs}
-    for item in list(gallery):
-        print(item)
     return render(request, "RoyalPages/gallery.html", context)
 
 def search_results(request):
