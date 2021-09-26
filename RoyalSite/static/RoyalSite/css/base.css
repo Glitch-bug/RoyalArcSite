@@ -91,9 +91,6 @@ section > img {
 /* Phones */
 @media screen and (max-width:480px) {
     /* Header */
-    .navbar {
-        height:13vw;
-    }
 
     .navbar > ul > li > a{
         font-size: 15px;
@@ -111,7 +108,7 @@ section > img {
     }
 
     .navbar > ul > li:last-child{
-        margin-right: 0px;
+        margin-right: 3px;
     }
 
     /* Body */
