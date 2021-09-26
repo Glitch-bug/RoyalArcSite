@@ -91,8 +91,27 @@ section > img {
 /* Phones */
 @media screen and (max-width:480px) {
     /* Header */
+    .navbar {
+        height:13vw;
+    }
+
     .navbar > ul > li > a{
-        font-size: 12px;
+        font-size: 15px;
+    }
+
+
+    .navbar > ul {
+        align-items: flex-end;
+        margin-right: 0px;
+        padding: 0px;
+    }
+
+    .navbar > ul > li:first-child{
+        margin-left: 0px;
+    }
+
+    .navbar > ul > li:last-child{
+        margin-right: 0px;
     }
 
     /* Body */
@@ -105,7 +124,11 @@ section > img {
     }
 
     #logo {
-        width: 6%;
+        width: 10vw;
         min-width: 50px;
+    }
+
+    section{
+        height: 27vh;
     }
 }
