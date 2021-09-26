@@ -89,8 +89,8 @@ ion-icon {
     
 
     /* Body */
-    .content {
-        font-size: 13;
+    .content > p{
+        font-size: 15px;
     }
 
     .content > h1 {
@@ -98,6 +98,7 @@ ion-icon {
     }
 
     .content > i {
-        font-size: 22px;
+        font-size: 24px;
+        color: rgb(250, 253, 77);
     }
 }

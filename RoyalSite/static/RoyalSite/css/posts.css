@@ -101,8 +101,7 @@
 }
 
 #search-form {
-    width: 100%;
-    
+    width: 100%;  
 }
 
 .search-sec  p {
@@ -176,6 +175,10 @@ li {
     .search-sec a {
         margin-top: 0px;
         margin-bottom: 0px;
+    }
+
+    #search-input {
+        height: 40px;
     }
 
     li {

@@ -91,9 +91,12 @@ section > img {
 /* Phones */
 @media screen and (max-width:480px) {
     /* Header */
+    .navbar {
+        height:20vw;
+    }
 
     .navbar > ul > li > a{
-        font-size: 15px;
+        font-size: 13px;
     }
 
 
@@ -121,7 +124,7 @@ section > img {
     }
 
     #logo {
-        width: 10vw;
+        width: 18vw;
         min-width: 50px;
     }
 
