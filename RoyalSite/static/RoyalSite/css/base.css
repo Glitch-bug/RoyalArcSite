@@ -92,7 +92,7 @@ section > img {
 @media screen and (max-width:480px) {
     /* Header */
     .navbar {
-        height:20vw;
+        height:17vw;
     }
 
     .navbar > ul > li > a{
@@ -101,7 +101,6 @@ section > img {
 
 
     .navbar > ul {
-        align-items: flex-end;
         margin-right: 0px;
         padding: 0px;
     }
