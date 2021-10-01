@@ -81,9 +81,19 @@ body {
 
     #left {
         width: 90vw;
+        min-height: 0px;
     }
 
     #right {
         width: 90vw;
+        min-height: 0px;
+    }
+
+    #right > p {
+        margin-bottom: 6px;
+    }
+
+    #left > p {
+        margin-bottom: 6px;
     }
 }

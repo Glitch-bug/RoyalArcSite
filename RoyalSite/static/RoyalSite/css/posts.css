@@ -195,11 +195,13 @@ li {
 
     .post-info {
         width: fit-content;
+        padding: 3px;
     }
 
     .post-text {
         margin: 0px;
         margin-left: 22px;
-        width: 85vw;
+        width: 90vw;
+        padding-top:15px;
     }
 }

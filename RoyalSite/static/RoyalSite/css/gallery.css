@@ -93,6 +93,10 @@ body {
     display: inline;
 }
 
+.img:hover img{
+    border:5px solid purple;
+}
+
 .buttons {
     display: flex;
     flex-direction: row;
@@ -114,3 +118,4 @@ body {
 div:hover > .tooltip {
     visibility: visible;
 }
+

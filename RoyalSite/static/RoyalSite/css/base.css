@@ -118,6 +118,10 @@ section > img {
         font-size: 32px;
     }
 
+    section h1 {
+        font-size: 22
+    }
+
     h2 {
         font-size: 18;
     }
@@ -128,6 +132,6 @@ section > img {
     }
 
     section{
-        height: 27vh;
+        height: 25vh;
     }
 }
