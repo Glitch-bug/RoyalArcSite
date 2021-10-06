@@ -1,11 +1,11 @@
 from django.db import models
-
+from cloudinary.models import CloudinaryField
 class AboutUs(models.Model):
     """The info about the enterprise to displayed"""
     title = models.CharField(max_length=200)
     order = models.IntegerField()
     text = models.TextField()
-    background = models.ImageField(upload_to="media/", default="RoyalSite/static/RoyalSite/images/gallery/x.png")
+    background = CloudinaryField("RoyalArcSite/backgrounds")
     def __str__(self):
         """Returns a string representation of the model"""
         return f"{self.title[:50]} ({self.order})"
@@ -13,7 +13,7 @@ class AboutUs(models.Model):
 class BlogPost(models.Model):
     """An entry in a bloggers web journal"""
     title = models.CharField(max_length=200)
-    cover = models.ImageField(upload_to="media/", null=True, blank=True)
+    cover = CloudinaryField("RoyalArcSite/covers")
     text = models.TextField()
     date_added = models.DateTimeField(auto_now_add=True)
     views = models.IntegerField(default=0, null=True, blank=True)
@@ -31,5 +31,4 @@ class Catergory(models.Model):
 class Image(models.Model):
     """Pictures mooore pictures"""
     title = models.CharField(max_length=200, null=True, blank=True)
-    image = models.ImageField(upload_to="media/", default="RoyalSite/static/RoyalSite/images/gallery/x.png")
-
+    image = CloudinaryField("RoyalArcSite/gallery")

@@ -1,0 +1,104 @@
+/* Laptop Screen size */
+
+/* Header */
+#wrapper {
+    background-image: url("background.jpg");
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    
+}
+.navbar > ul > li > a.home {
+    border-bottom: 3px purple solid;
+    color: rgba(248, 252, 52, 0.6);
+    width: 100%;
+}
+
+/* Body */
+.content > button {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
+    margin: 20px;
+    padding: 10px;
+    background-color: blueviolet;
+    border-radius: 5px;
+    height: min-content;
+    width: fit-content;
+    border: none;
+    transition: 0.5s;
+    cursor: pointer;
+    
+}
+
+ion-icon {
+    font-size: larger;
+    color: white;
+    margin-right: 5px;
+}
+
+.content > button > a {
+    text-decoration: none;
+    color: white;
+    font-size: medium;
+}
+
+
+.content > button:hover {
+    background-color: purple;
+}
+
+.content {
+    order: 2;
+    display: flex;
+    height: 100%;
+    width: 70%;
+    flex-direction: column;
+    justify-self: center;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    color: rgb(97, 40, 105);
+    font-size: 20px;
+}
+
+.content > h1 {
+    font-size: 70px;
+    font-weight: bold;
+    color: rgb(250, 253, 77);
+    text-shadow: 3px 3px black, -3px -3px black;
+}
+
+.content > i {
+    font-size: 60px;
+    color: rgb(119, 119, 114);
+}
+
+
+
+#info {
+    position: fixed;
+    visibility: hidden;
+}
+
+/* Phone */
+@media screen and (max-width:480px){
+    
+
+    /* Body */
+    .content > p{
+        font-size: 15px;
+    }
+
+    .content > h1 {
+        font-size: 32px;
+    }
+
+    .content > i {
+        font-size: 30px;
+        color: rgb(250, 253, 77);
+    }
+}

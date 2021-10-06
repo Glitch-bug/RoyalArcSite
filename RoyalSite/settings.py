@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 import django_heroku
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 from pathlib import Path
 
@@ -25,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-=4m0i3-^%n1vtfy635u8ex)q$727fnyttft3)j@knnc&9=py$h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'royal-arc-cleaning-services.herokuapp.com']
 
@@ -35,7 +38,6 @@ ALLOWED_HOSTS = ['127.0.0.1', 'royal-arc-cleaning-services.herokuapp.com']
 INSTALLED_APPS = [
     #My Apps
     'RoyalPages',
-    'whitenoise.runserver_nostatic',
     
     #Default Apps
     'django.contrib.admin',
@@ -43,7 +45,12 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
+
+    # Media Cloudinary
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
@@ -138,6 +145,7 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, '/staticfiles/')
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 django_heroku.settings(locals())
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -150,6 +158,13 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+cloudinary.config( 
+  cloud_name = "dq91yij86", 
+  api_key = "866421258393826", 
+  api_secret = "gtdGUwpoLczXcPiI_W4LihMFpE4",
+  secure = True
+)
 
 LOGGING = {
     'version': 1,
