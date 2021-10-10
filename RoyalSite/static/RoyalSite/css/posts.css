@@ -1,13 +1,11 @@
 
 /* Posts */
-.post {
+post {
     margin: 20px 0px;
     display: flex;
     flex-direction: column;
     padding: 0px;
-    width: 70vw;
 }
-
 .buttons {
     display: flex;
     flex-direction: row;
@@ -55,7 +53,6 @@
     background-color: rgba(211, 65, 128, 0.5);
     width: max-content;
     margin-left: 15px;
-    border: 2px solid red;
 }
 
 .post-info > a {
@@ -89,20 +86,19 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 100%;
 }
 
 /* search bar */
 .search-sec {
-    width: 20%;
+    width: 1000px;
     height: inherit;
     background-color: darkgrey;
-    overflow-y:scroll;
+    overflow:scroll;
 }
 
 #search-form {
-    width: 100%;  
-}
+    width: 100%;
+    }
 
 .search-sec  p {
     font-size: bold;
@@ -177,31 +173,11 @@ li {
         margin-bottom: 0px;
     }
 
-    #search-input {
-        height: 40px;
-    }
-
     li {
         padding: 5px 5px 5px;
     }
 
     .posts {
         order: 1;
-    }
-
-    .posts{
-        width: 100%;
-    }
-
-    .post-info {
-        width: fit-content;
-        padding: 3px;
-    }
-
-    .post-text {
-        margin: 0px;
-        margin-left: 22px;
-        width: 90vw;
-        padding-top:15px;
     }
 }
