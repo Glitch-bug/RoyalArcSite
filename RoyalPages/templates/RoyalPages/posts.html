@@ -15,7 +15,7 @@
         <div class="post">
           <div class="post-info">
             <a href="{% url 'RoyalPages:blog' post.pk %}">{{ post.title }}</a>&middot;
-            <p> by Author | {{ post.date_added|date:'M d, Y H:i' }}</p>
+            <p> by {{ post.owner }} | {{ post.date_added|date:'M d, Y H:i' }}</p>
           </div>
           <div class="post-text">
           <p>{{ post.text|linebreaks }}</p>

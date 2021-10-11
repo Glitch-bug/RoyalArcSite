@@ -1,11 +1,12 @@
 from django.db import models
+from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 class AboutUs(models.Model):
     """The info about the enterprise to displayed"""
     title = models.CharField(max_length=200)
     order = models.IntegerField()
     text = models.TextField()
-    background = CloudinaryField("RoyalArcSite/backgrounds")
+    background = CloudinaryField("RoyalArcSite/backgrounds", null=True, blank=True)
     def __str__(self):
         """Returns a string representation of the model"""
         return f"{self.title[:50]} ({self.order})"
@@ -13,9 +14,10 @@ class AboutUs(models.Model):
 class BlogPost(models.Model):
     """An entry in a bloggers web journal"""
     title = models.CharField(max_length=200)
-    cover = CloudinaryField("RoyalArcSite/covers")
+    cover = CloudinaryField("RoyalArcSite/covers", default='media\backgrounds\defualt_images.png')
     text = models.TextField()
     date_added = models.DateTimeField(auto_now_add=True)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     views = models.IntegerField(default=0, null=True, blank=True)
 
     def __str__(self):
