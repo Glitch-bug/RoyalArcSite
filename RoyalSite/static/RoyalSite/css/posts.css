@@ -1,11 +1,13 @@
 
 /* Posts */
-post {
+.post {
     margin: 20px 0px;
     display: flex;
     flex-direction: column;
     padding: 0px;
+    width: 70vw;
 }
+
 .buttons {
     display: flex;
     flex-direction: row;
@@ -53,6 +55,7 @@ post {
     background-color: rgba(211, 65, 128, 0.5);
     width: max-content;
     margin-left: 15px;
+    border: 2px solid red;
 }
 
 .post-info > a {
@@ -86,19 +89,20 @@ post {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    width: 100%;
 }
 
 /* search bar */
 .search-sec {
-    width: 1000px;
+    width: 20%;
     height: inherit;
     background-color: darkgrey;
-    overflow:scroll;
+    overflow-y:scroll;
 }
 
 #search-form {
-    width: 100%;
-    }
+    width: 100%;  
+}
 
 .search-sec  p {
     font-size: bold;
