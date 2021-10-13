@@ -196,6 +196,7 @@ li {
     .post-info {
         width: fit-content;
         border: none;
+        overflow-x: hidden;
     }
 
     .post-text {
