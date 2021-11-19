@@ -14,30 +14,30 @@
 
   </ul>
   <script>
-    // var data = '{{abouts_qs}}'
-    // var rdata = JSON.parse(data.replace(/&quot;/ig, '"'))
+    var data = '{{abouts_qs}}'
+    var rdata = JSON.parse(data.replace(/&quot;/ig, '"'))
 
-    // document.addEventListener("DOMContentLoaded", function() {
-    //   setInterval(change, 8000);
-    // });
+    document.addEventListener("DOMContentLoaded", function() {
+      setInterval(change, 8000);
+    });
 
-    // var num = 0;
+    var num = 0;
 
-    // function change() {
-    //   console.log('chicken')
-    //   var text = rdata[num]['fields']['text']
-    //   var italics = rdata[num]['fields']['title']
-    //   var background = rdata[num]['fields']['background']
-    //   document.getElementById('italic').innerHTML = italics
-    //   document.getElementById('shows').innerHTML = text;
-    //   document.getElementById('wrapper').style.backgroundImage = `url(/static/RoyalSite/css/${background})`
-    //   if (num < rdata.length - 1) {
-    //       num += 1
-    //       console.log(num)
-    //   } else {
-    //       num = 0
-    //   }
-    // }; 
+    function change() {
+      console.log('chicken')
+      var text = rdata[num]['fields']['text']
+      var italics = rdata[num]['fields']['title']
+      var background = rdata[num]['fields']['background']
+      document.getElementById('italic').innerHTML = italics
+      document.getElementById('shows').innerHTML = text;
+      document.getElementById('wrapper').style.backgroundImage = `url(/static/RoyalSite/css/${background})`
+      if (num < rdata.length - 1) {
+          num += 1
+          console.log(num)
+      } else {
+          num = 0
+      }
+    }; 
   </script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
