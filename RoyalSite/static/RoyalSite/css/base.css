@@ -62,6 +62,13 @@ img:hover{
     transition: border-bottom-width  0.4s linear;
 } 
 
+@media screen and (max-width: 800px){
+    .navbar > ul > li > a{
+        font-size: 1rem;
+        font-weight: normal;
+    }
+}
+
 .navbar > ul > li > a::before{
     content: '';
     height: 0.15rem;

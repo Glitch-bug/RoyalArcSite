@@ -28,17 +28,25 @@ body{
 }
 
 #content {
-    background-color: rgb(194, 189, 189, 0.8);
+    margin: 3rem auto;
+    width: 80%;
+    background-color: rgb(194, 189, 189, 0.6);
     color:black;
     font-family: 'Poppins',sans-serif;
-    margin-right: 60px;
-    margin-left: 60px;
     height: 100%;
     margin-bottom: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 30px;
+}
+
+@media screen and (max-width: 700px){
+    #content{
+        width: 100%;
+        background-color: rgb(194, 189, 189);
+        margin: 0 auto;
+    }
 }
 
 #title {
@@ -70,7 +78,14 @@ body{
     padding: 7px;
     border-radius: 3px;
     height: 35px;
+    transition: all 0.5s ease-in-out;
 }
+
+#page > button:hover{
+    border: 1px solid red;
+}
+
+
 
 #page > button > a {
     text-decoration: none;
@@ -87,17 +102,9 @@ body{
 #comments {
     color: white;
     border: 2px solid white;
-    padding: 3px 0px 3px 7px;
     margin-top: 5px;
+    padding: 1rem 2rem;
     margin-bottom: 20px;
     display: block;
     width: 100%;
-}
-
-/* Phone */
-@media screen and (max-width:480px){
-    #content {
-        margin-left: 0px;
-        margin-right: 0px;
-    }
 }

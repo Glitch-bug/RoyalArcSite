@@ -33,7 +33,7 @@
   <body>
     <div id="wrapper">
       <nav class="navbar">
-        <img id="logo" src="{% static 'RoyalSite/images/royal.png' %}">
+        <a href="{% url 'RoyalPages:home' %}"><img id="logo" src="{% static 'RoyalSite/images/royal.png' %}"></a>
         <ul>
           <li><a class="home" href="{% url 'RoyalPages:home' %}">Home</a></li>
           <li><a class="posts" href="{% url 'RoyalPages:posts' %}">Blog Posts</a></li>

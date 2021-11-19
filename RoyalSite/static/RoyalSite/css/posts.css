@@ -108,7 +108,7 @@ body{
     overflow-y:scroll;
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 700px){
     .search-sec{
     height: 30vh;
     width: 100%;
@@ -120,7 +120,7 @@ body{
     }
 
     .post{
-        margin: auto;
+        margin: 3rem auto;
     }
 }
 
