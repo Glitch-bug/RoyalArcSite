@@ -1,5 +1,25 @@
 /* Laptop Screen size */
 
+/* Jemimah's edit start */
+body{
+    background-image: url("background.jpg");
+    background-attachment: fixed;
+    background-size: contain;
+}
+
+#italic{
+    margin: 5rem 2.5rem;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(26, 8, 23);
+    font-size:3rem;
+    font-style: normal;
+    text-align: center;
+}
+
+/* Jemimah's edit end */
+
 /* Header */
 #wrapper {
     background-image: url("background.jpg");
@@ -21,40 +41,42 @@
 .content > button {
     display: flex;
     flex-direction: row;
-    align-self: flex-end;
-    margin: 20px;
-    padding: 10px;
-    background-color: blueviolet;
-    border-radius: 5px;
+    align-self: center;
+    margin: 3rem;
+    padding: 1.3rem;
+    border-radius: 0.5rem;
     height: min-content;
     width: fit-content;
     border: none;
     transition: 0.5s;
     cursor: pointer;
-    
+    background: linear-gradient(45deg, white, purple, pink);
+    transition: all 0.5s ease-in-out;
 }
 
 ion-icon {
     font-size: larger;
-    color: white;
-    margin-right: 5px;
+    color:rgb(65, 11, 65);
+    /* margin-right: 5px; */
 }
 
 .content > button > a {
     text-decoration: none;
-    color: white;
+    color: rgb(65, 11, 65);
     font-size: medium;
 }
 
 
 .content > button:hover {
-    background-color: purple;
+    background: aliceblue;
 }
 
 .content {
-    order: 2;
+    margin: auto;
+    order:2;
     display: flex;
-    height: 100%;
+    /* 100% */
+    height: 70vh;
     width: 70%;
     flex-direction: column;
     justify-self: center;
@@ -62,15 +84,15 @@ ion-icon {
     justify-content: center;
     align-items: center;
     color: rgb(97, 40, 105);
-    font-size: 20px;
+    font-size: 4rem;
 }
 
-.content > h1 {
-    font-size: 70px;
+/* .content > h1 {
+    font-size: 4rem;
     font-weight: bold;
     color: rgb(250, 253, 77);
     text-shadow: 3px 3px black, -3px -3px black;
-}
+} */
 
 .content > i {
     font-size: 60px;
@@ -85,7 +107,7 @@ ion-icon {
 }
 
 /* Phone */
-@media screen and (max-width:480px){
+@media screen and (max-width:600px){
     
 
     /* Body */
@@ -95,6 +117,17 @@ ion-icon {
 
     .content > h1 {
         font-size: 32px;
+    }
+
+    #italic{
+        font-size: 2rem;
+        text-align: left;
+        margin: 1rem;
+    }
+
+    .content > button{
+        margin: 1rem;
+        align-self: flex-start;
     }
 
     .content > i {

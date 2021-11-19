@@ -28,7 +28,7 @@ body{
 }
 
 #content {
-    background-color: silver;
+    background-color: rgb(194, 189, 189, 0.8);
     color:black;
     font-family: 'Poppins',sans-serif;
     margin-right: 60px;
