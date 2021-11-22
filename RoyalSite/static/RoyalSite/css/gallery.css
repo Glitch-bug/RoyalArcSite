@@ -45,26 +45,26 @@ ion-icon {
 }
 
 .img {
-    max-width: 800px;
-    min-width: 300px;
-    height: 400px;
+    height: 60vh;
+    max-width: 900px;
     cursor: pointer;
-    margin: 5px;
     display: flex;
     flex-direction: column;
-    margin: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    transition: all 0.34s ease-in-out;
 }
 
 .img > img {
-    width: 100%;
-    height: 90%;
-    margin: 0;
+    width: 20rem;
+    height: 18rem;
+    align-self: flex-start;
+    margin: 3rem;
 }
 
-
-
 body {
-    background-color: lightgrey;
+    background: linear-gradient(45deg, lightgray, darkslateblue, pink);
 }
 
 .navbar > ul > li > a.Gallery {
@@ -92,8 +92,12 @@ body {
     display: inline;
 }
 
-.img:hover img{
+/* .img:hover img{
     border:5px solid purple;
+} */
+
+.img:hover img{
+    transform: scale(1.2);
 }
 
 .buttons {
@@ -118,10 +122,10 @@ div:hover > .tooltip {
     visibility: visible;
 }
 
-@media screen and (max-height:480px){
+/* @media screen and (max-height:480px){
     .img{
         height: 60px;
         min-width: 0px;
         max-width: 300px;
     }
-}
+} */
