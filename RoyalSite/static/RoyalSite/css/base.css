@@ -19,8 +19,8 @@
     /* border-radius: 2rem 0; */
 }
 
-img {
-    height: 100px;
+#logo {
+    height: 100%;
     width: 110px;
     margin-left: 0px;
     border: 3px solid white;
@@ -28,7 +28,7 @@ img {
     transition: all 0.5s ease-in-out;
 }
 
-img:hover{
+#logo:hover{
     transform: scale(1.1) rotate(30deg);
 }
 
@@ -45,11 +45,7 @@ img:hover{
     margin: 0 2rem;
 }
 
-@media screen and (max-width: 700px) {
-    .navbar > ul > li{
-        margin: 0 1rem;
-    }
-}
+
 
 .navbar > ul > li > a {
     text-decoration: none; 
@@ -61,13 +57,6 @@ img:hover{
     border-bottom-width: 0;
     transition: border-bottom-width  0.4s linear;
 } 
-
-@media screen and (max-width: 800px){
-    .navbar > ul > li > a{
-        font-size: 1rem;
-        font-weight: normal;
-    }
-}
 
 .navbar > ul > li > a::before{
     content: '';
@@ -127,10 +116,9 @@ section > img {
     }
 
     .navbar > ul > li > a{
-        font-size: 13px;
+        font-size: 1rem;
+        font-weight: normal;
     }
-
-
     .navbar > ul {
         margin-right: 0px;
         padding: 0px;
