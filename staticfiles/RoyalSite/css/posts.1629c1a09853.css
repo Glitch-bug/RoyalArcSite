@@ -1,0 +1,236 @@
+body{
+    background: linear-gradient(45deg, white, gray, black);
+    overflow-x: hidden;
+}
+
+.main{
+    margin: auto 2rem;
+}
+
+/* Posts */
+.post {
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    width: 70vw;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.buttons > button {
+    background-color: blueviolet;
+    padding: 5px 13px;
+    border: none;
+    color: white;
+    margin: 10px;
+    transition: 0.5;
+}
+
+.views {
+    background-color: darkgrey;
+    padding: 5px 13px;
+    border: none;
+    margin: 10px;
+    color: black;
+    display: inline;
+    min-width: 40px;
+    text-align: center;
+}
+
+.buttons > button > a {
+    color: white;
+    font-size: medium;
+    text-decoration: none;
+}
+
+.buttons > button:hover {
+    background-color: purple;
+}
+
+.post-info {
+    display:flex;
+    flex-direction: row;
+    margin: 10px 10px 2px 0px;
+    padding: 15px;
+    position: relative;
+    top: 20px;
+    background-color: rgba(211, 65, 128, 0.5);
+    width: max-content;
+    margin-left: 15px;
+    border: 2px solid red;
+}
+
+.post-info > a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.post-text > p {
+    text-align: justify;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0px 10px 0px 10px;
+}
+
+.post-text { 
+    background-color: lightgrey;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    margin:0px 15px 0px 30px;
+}
+
+.navbar > ul > li > a.posts {
+    border-bottom: 3px purple solid;
+    color: rgba(248, 252, 52, 0.6);
+    width: 100%;
+}
+
+/* main */
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* search bar */
+.search-sec {
+    width: 20%;
+    height: 80vh;
+    background-color: darkgrey;
+    overflow-y:scroll;
+}
+
+@media screen and (max-width: 700px){
+    .search-sec{
+    height: 30vh;
+    width: 100%;
+    }
+
+    .main{
+        flex-direction: column-reverse;
+        margin: auto;
+    }
+
+    .post{
+        margin: 3rem auto;
+    }
+}
+
+#search-form {
+    width: 100%;  
+}
+
+#search-from > input{
+    height: 3rem;
+}
+
+.search-sec  p {
+    font-size: bold;
+    color: white;
+    background-color: blueviolet;
+    box-shadow: 0px 3px 3px rgb(60, 50, 60);
+    padding: 14px 4px 14px;
+    font-weight: bold;
+}
+
+#search-input {
+    width: inherit;
+    background-color: rgb(230, 230, 230);
+    border: none;
+    padding: 7px;
+    font-size: medium;
+}
+
+li {
+    list-style: none;
+    padding: 20px 5px 20px;
+}
+
+.search-sec  ul > li > a {
+    display: block;
+    background-color: lightgrey;
+    text-decoration: none;
+    font-weight: bold;
+    color: purple;
+    padding-left: 5px; 
+}
+
+/* Phones */
+
+/* @media screen and (max-width:600px) {
+    .search-sec {
+        display: block;
+        order: 0;
+        width: 100%;
+        background-color: darkgrey;
+        z-index: 2;
+    }
+
+    .search-sec * {
+        margin: 0px;
+    }
+
+    .search-sec > #search-items {
+        display: none;
+        position: absolute;
+        background-color: darkgrey;
+        max-height: 300px;
+        overflow-y:scroll;
+        margin: 0px;
+    } 
+
+
+    .main {
+        flex-direction: row;
+        /* align-items: center;
+        justify-content: center; 
+    }
+
+    .search-sec  #search-form {
+        display: block;
+        padding: 0px;
+        margin: 0px;
+    } 
+    
+    .search-sec a {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    #search-input {
+        height: 40px;
+    }
+
+    li {
+        padding: 5px 5px 5px;
+    }
+
+    .posts {
+        order: 1;
+    }
+
+    .posts{
+        width: 100%;
+    }
+
+    .post-info {
+        width: fit-content;
+        border: none;
+    }
+
+    .post-text {
+        margin: 0px;
+        margin-left: 30px;
+        width: 90vw;
+        padding-top:15px;
+    }
+} */
+

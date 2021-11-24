@@ -1,0 +1,139 @@
+/* Laptop Screen size */
+
+/* Jemimah's edit start */
+body{
+    background-image: url("background.e8a82973d8e5.jpg");
+    background-attachment: fixed;
+    background-size: contain;
+}
+
+#italic{
+    margin: 5rem 2.5rem;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(26, 8, 23);
+    font-size:3rem;
+    font-style: normal;
+    text-align: center;
+}
+
+/* Jemimah's edit end */
+
+/* Header */
+#wrapper {
+    background-image: url("background.e8a82973d8e5.jpg");
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    
+}
+.navbar > ul > li > a.home {
+    border-bottom: 3px purple solid;
+    color: rgba(248, 252, 52, 0.6);
+    width: 100%;
+}
+
+/* Body */
+.content > button {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    margin: 3rem;
+    padding: 1.3rem;
+    border-radius: 0.5rem;
+    height: min-content;
+    width: fit-content;
+    border: none;
+    transition: 0.5s;
+    cursor: pointer;
+    background: linear-gradient(45deg, white, purple, pink);
+    transition: all 0.5s ease-in-out;
+}
+
+ion-icon {
+    font-size: larger;
+    color:rgb(65, 11, 65);
+    /* margin-right: 5px; */
+}
+
+.content > button > a {
+    text-decoration: none;
+    color: rgb(65, 11, 65);
+    font-size: medium;
+}
+
+
+.content > button:hover {
+    background: aliceblue;
+}
+
+.content {
+    margin: auto;
+    order:2;
+    display: flex;
+    /* 100% */
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    justify-self: center;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    background: rgb(119, 119, 114, 0.7);
+    color: rgb(27, 9, 29);
+    font-size: 2rem;
+}
+
+/* .content > h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    color: rgb(250, 253, 77);
+    text-shadow: 3px 3px black, -3px -3px black;
+} */
+
+.content > i {
+    font-size: 60px;
+    color: rgb(119, 119, 114);
+}
+
+
+
+#info {
+    position: fixed;
+    visibility: hidden;
+    width: 60%;
+}
+
+/* Phone */
+@media screen and (max-width:600px){
+    
+
+    /* Body */
+    .content > p{
+        font-size: 15px;
+    }
+
+    .content > h1 {
+        font-size: 32px;
+    }
+
+    #italic{
+        font-size: 2rem;
+        text-align: left;
+        margin: 1rem;
+    }
+
+    .content > button{
+        margin: 1rem;
+        align-self: flex-start;
+    }
+
+    .content > i {
+        font-size: 30px;
+        color: rgb(250, 253, 77);
+    }
+}
