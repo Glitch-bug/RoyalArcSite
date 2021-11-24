@@ -1,5 +1,5 @@
 body{
-    background: linear-gradient(45deg, white, gray, black);
+    background: linear-gradient(-45deg, black, gray, darkgray, white);
     overflow-x: hidden;
 }
 
@@ -9,7 +9,7 @@ body{
 
 /* Posts */
 .post {
-    margin: 20px 0px;
+    margin: 2rem 0px;
     display: flex;
     flex-direction: column;
     padding: 0px;
@@ -54,15 +54,14 @@ body{
 }
 
 .post-info {
-    display:flex;
+    display: flex;
     flex-direction: row;
-    margin: 10px 10px 2px 0px;
-    padding: 15px;
+    margin: 0.5rem 0.6rem 0.5rem 1.3rem;
+    padding: 1.2rem;
     position: relative;
-    top: 20px;
+    top: 1.4rem;
     background-color: rgba(211, 65, 128, 0.5);
     width: max-content;
-    margin-left: 15px;
     border: 2px solid red;
 }
 
@@ -75,7 +74,7 @@ body{
 .post-text > p {
     text-align: justify;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin: 0px 10px 0px 10px;
+    margin: 0 1.2rem 0 1.2rem;
 }
 
 .post-text { 
@@ -109,6 +108,10 @@ body{
 }
 
 @media screen and (max-width: 700px){
+    body{
+        background: gray;
+    }
+
     .search-sec{
     height: 30vh;
     width: 100%;
@@ -120,7 +123,23 @@ body{
     }
 
     .post{
-        margin: 3rem auto;
+        margin: 1.5rem 1rem;
+    }
+
+    .post-info{
+        margin: 0.1rem 0.6rem 0.5rem 1rem;
+        padding: 1rem 0.6rem;
+        width: 80%;
+    }
+
+    .post-text{
+        margin: 0.2 0rem;
+        width: 100%;
+    }
+    .post-text > p {
+        padding: 0 2rem;
+        text-align: left;
+        font-size: 1rem;
     }
 }
 
