@@ -16,12 +16,13 @@
     flex-direction: row;
     justify-content: space-between;
     z-index: 3;
+    /* overflow-x:visible; */
     /* border-radius: 2rem 0; */
 }
 
 #logo {
     height: 100%;
-    width: 110px;
+    width: 7rem;
     margin-left: 0px;
     border: 3px solid white;
     background-color: rgba(255, 255, 255, 0.747);
@@ -32,7 +33,7 @@
     transform: scale(1.1) rotate(30deg);
 }
 
-.navbar > ul{
+.desktop{
     display: flex;
     flex-direction: row;
     justify-self: center;
@@ -40,14 +41,12 @@
     justify-content: center;
 } 
 
-.navbar > ul > li {
+.desktop > li {
     list-style: none;
     margin: 0 2rem;
 }
 
-
-
-.navbar > ul > li > a {
+.desktop > li > a {
     text-decoration: none; 
     color: white;
     font-size: 1.3rem;
@@ -58,7 +57,7 @@
     transition: border-bottom-width  0.4s linear;
 } 
 
-.navbar > ul > li > a::before{
+.desktop > li > a::before{
     content: '';
     height: 0.15rem;
     width: 100%;
@@ -69,11 +68,11 @@
     transition: transform 0.5s ease-in-out;
 }
 
-.navbar > ul > li > a:hover::before{
+.desktop > li > a:hover::before{
     transform: scale(1);
 }
 
-.navbar > ul > li > a:hover {
+.desktop > li > a:hover {
     border-bottom-width: inherit;
     color: rgba(251, 255, 0, 0.6);
     width: 100%;
@@ -84,6 +83,7 @@
 body {
     background-color: white;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 100vw;
 }
 
 section {
@@ -108,29 +108,80 @@ section > img {
     height: 180px;
 }
 
+.bars{
+    display: none;
+}
+
+.xx{
+    display: none;
+}
+
+.mobile{
+    display: none;
+}
+
+.mobile > li {
+    list-style: none;
+    margin: 0 2rem;
+}
+
+.mobile > li > a {
+    text-decoration: none; 
+    color: white;
+    font-size: 1.3rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    border-bottom: 3px purple solid;
+    border-bottom-width: 0;
+    transition: border-bottom-width  0.4s linear;
+} 
+
+.mobile > li > a::before{
+    content: '';
+    height: 0.15rem;
+    width: 100%;
+    display: block;
+    background-color: rgba(173, 175, 45);
+    transform: scale(0);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
+}
+
+.mobile > li > a:hover::before{
+    transform: scale(1);
+}
+
+.mobile > li > a:hover {
+    border-bottom-width: inherit;
+    color: rgba(251, 255, 0, 0.6);
+    width: 100%;
+
+}
+
 /* Phones */
-@media screen and (max-width:480px) {
+@media screen and (max-width:600px){
     /* Header */
+
     .navbar {
         height:17vw;
     }
 
-    .navbar > ul > li > a{
-        font-size: 1rem;
-        font-weight: normal;
-    }
-    .navbar > ul {
-        margin-right: 0px;
-        padding: 0px;
+    .desktop > li{
+        display: none;
     }
 
-    .navbar > ul > li:first-child{
+    /* .navbar > ul > li > a{
+        font-size: 1rem;
+        font-weight: normal;
+    } */
+
+    /* .navbar > ul > li:first-child{
         margin-left: 0px;
     }
 
     .navbar > ul > li:last-child{
         margin-right: 3px;
-    }
+    } */
 
     /* Body */
     h1 {
@@ -138,7 +189,7 @@ section > img {
     }
 
     section h1 {
-        font-size: 22
+        font-size: 22;
     }
 
     h2 {
@@ -152,5 +203,60 @@ section > img {
 
     section{
         height: 25vh;
+    }
+
+    .bars{
+        display: block;
+        order: 3;
+        margin: 1rem 3rem;
+    }
+
+    .bar{
+        margin: 0.5rem;
+        height: 0.3rem;
+        width: 3rem;
+        background: purple;
+        cursor: pointer;
+    }
+    
+
+    .bar:hover{
+        background: rgb(197, 109, 197);
+    }
+
+    .mobile{
+        position: absolute;
+        right: 0;
+        height: max-content;
+        left: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 3.5rem 1rem 3rem 1rem;
+        background: rgba(0, 0, 0, 0.7);
+    }
+    
+    .mobile > li{
+        align-self: flex-start;
+        font-size: 3rem;
+    }
+    
+    .mobile > li > a{
+        font-weight: bold;
+        font-size: 1.4rem;
+    }
+    
+    .mobile > li > a{
+        margin: 2rem;
+    }
+    
+    .mobile > h1{
+        color: rgb(216, 122, 122);
+        position: absolute;
+        display: block;
+        right: 20%;
+        top: 2rem;
+        cursor: pointer;
     }
 }

@@ -50,7 +50,7 @@ body{
     border: none;
     transition: 0.5s;
     cursor: pointer;
-    background: linear-gradient(45deg, white, purple, pink);
+    background: rgb(212, 144, 212);
     transition: all 0.5s ease-in-out;
 }
 

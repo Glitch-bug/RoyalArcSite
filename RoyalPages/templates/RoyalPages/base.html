@@ -34,7 +34,13 @@
     <div id="wrapper">
       <nav class="navbar">
         <a href="{% url 'RoyalPages:home' %}"><img id="logo" src="{% static 'RoyalSite/images/royal.png' %}"></a>
-        <ul>
+        <div class = "bars">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+        <ul class = "desktop show">
+          <h1 class = "xx">X</h1>
           <li><a class="home" href="{% url 'RoyalPages:home' %}">Home</a></li>
           <li><a class="posts" href="{% url 'RoyalPages:posts' %}">Blog Posts</a></li>
           <li><a class="about" href="{% url 'RoyalPages:about' %}">About Us</a></li>
@@ -46,6 +52,28 @@
     </div>
     {% block body %}
     {% endblock body %}
+    <script>
+      const mobile = document.querySelector(".show");
+      const X = document.querySelector(".xx");
+      const bars = document.querySelector(".bars");
+      const logo = document.querySelector("#logo");
+      
+      function openMenu(){
+        mobile.classList.remove("desktop");
+        mobile.classList.add("mobile");
+        X.style.display = "block";
+      }
+
+      function closeMenu(){
+        mobile.classList.remove("mobile");
+        mobile.classList.add("desktop");
+        X.style.display = "none";
+      }
+
+      bars.addEventListener("click", openMenu, false);
+      X.addEventListener("click", closeMenu, false);
+
+    </script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   </body>
