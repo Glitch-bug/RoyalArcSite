@@ -2,7 +2,7 @@
 
 /* Jemimah's edit start */
 body{
-    background-image: url("background.jpg");
+    background-image: url("background.e8a82973d8e5.jpg");
     background-attachment: fixed;
     background-size: contain;
 }
@@ -22,7 +22,7 @@ body{
 
 /* Header */
 #wrapper {
-    background-image: url("background.jpg");
+    background-image: url("background.e8a82973d8e5.jpg");
     background-size: cover;
     height: 100vh;
     display: flex;
