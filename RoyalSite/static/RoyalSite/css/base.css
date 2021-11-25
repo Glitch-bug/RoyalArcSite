@@ -22,7 +22,7 @@
 
 #logo {
     height: 100%;
-    width: 7rem;
+    width: 10vw;
     margin-left: 0px;
     border: 3px solid white;
     background-color: rgba(255, 255, 255, 0.747);
@@ -30,7 +30,7 @@
 }
 
 #logo:hover{
-    transform: scale(1.1) rotate(30deg);
+    transform: scale(1.1) rotate(360deg);
 }
 
 .desktop{
@@ -91,6 +91,7 @@ section {
     display: flex;
     align-items: flex-end;
     justify-self: flex-start;
+    letter-spacing: 0.6rem;
 }
 
 section > h1 {
@@ -99,6 +100,8 @@ section > h1 {
     font-family: 'Roboto', sans-serif;
     margin-left: 10px;
     padding: 2rem;
+    text-transform: uppercase;
+    text-shadow: 0.5rem 0.5rem 0.4rem rgba(31, 30, 30, 0.9);
 }
 
 section > img {
@@ -122,7 +125,7 @@ section > img {
 
 .mobile > li {
     list-style: none;
-    margin: 0 2rem;
+    margin: 0 1rem;
 }
 
 .mobile > li > a {
@@ -163,7 +166,7 @@ section > img {
     /* Header */
 
     .navbar {
-        height:17vw;
+        height:12vh;
     }
 
     .desktop > li{
@@ -208,7 +211,7 @@ section > img {
     .bars{
         display: block;
         order: 3;
-        margin: 1rem 3rem;
+        margin: auto 1rem;
     }
 
     .bar{
@@ -227,36 +230,42 @@ section > img {
     .mobile{
         position: absolute;
         right: 0;
-        height: max-content;
-        left: 40%;
+        height: 90vh;
+        /* left: 30%; */
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 3.5rem 1rem 3rem 1rem;
-        background: rgba(0, 0, 0, 0.7);
+        padding: 12% 1rem 6rem 1rem;
+        background: rgba(0, 0, 0, 0.9);
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.9);
     }
     
     .mobile > li{
-        align-self: flex-start;
+        align-self:flex-start;
         font-size: 3rem;
+        margin-left: 10vw;
     }
     
     .mobile > li > a{
         font-weight: bold;
         font-size: 1.4rem;
+        margin: 5%;
     }
     
-    .mobile > li > a{
-        margin: 2rem;
+    .mobile > li > a:focus{
+        color: rgb(238, 99, 123);
     }
     
     .mobile > h1{
-        color: rgb(216, 122, 122);
+        color: rgb(223, 37, 37);
         position: absolute;
         display: block;
         right: 20%;
-        top: 2rem;
+        top: 10%;
         cursor: pointer;
+        font-size: 3rem;
+        font-weight: normal;
     }
 }
