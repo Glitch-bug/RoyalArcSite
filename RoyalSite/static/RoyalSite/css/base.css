@@ -118,6 +118,7 @@ section > img {
 
 .mobile{
     display: none;
+    
 }
 
 .mobile > li {
@@ -170,19 +171,7 @@ section > img {
         display: none;
     }
 
-    /* .navbar > ul > li > a{
-        font-size: 1rem;
-        font-weight: normal;
-    } */
-
-    /* .navbar > ul > li:first-child{
-        margin-left: 0px;
-    }
-
-    .navbar > ul > li:last-child{
-        margin-right: 3px;
-    } */
-
+    
     /* Body */
     h1 {
         font-size: 32px;
@@ -227,14 +216,14 @@ section > img {
     .mobile{
         position: absolute;
         right: 0;
-        height: max-content;
-        left: 40%;
+        height: 75vh;
+        margin-left: 50vw;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
-        padding: 3.5rem 1rem 3rem 1rem;
         background: rgba(0, 0, 0, 0.7);
+        
     }
     
     .mobile > li{
@@ -248,7 +237,7 @@ section > img {
     }
     
     .mobile > li > a{
-        margin: 2rem;
+        font-size: medium;
     }
     
     .mobile > h1{
