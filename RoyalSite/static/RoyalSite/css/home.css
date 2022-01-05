@@ -6,6 +6,7 @@ body{
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
+    height: 100%;
 }
 
 #italic{
@@ -13,7 +14,7 @@ body{
     text-transform: capitalize;
     font-weight: bold;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: rgb(26, 8, 23);
+    color: darkgrey;
     font-size:3rem;
     font-style: normal;
     text-align: center;

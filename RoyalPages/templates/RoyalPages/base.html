@@ -34,13 +34,10 @@
     <div id="wrapper">
       <nav class="navbar">
         <a href="{% url 'RoyalPages:home' %}"><img id="logo" src="{% static 'RoyalSite/images/royal.png' %}"></a>
-        <div class = "bars">
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
+        <div class = "toggle"> 
         </div>
         <ul class = "desktop show">
-          <h1 class = "xx">X</h1>
+          <!-- Add close button, Make toggle disapear after openning menu -->
           <li><a class="home" href="{% url 'RoyalPages:home' %}">Home</a></li>
           <li><a class="posts" href="{% url 'RoyalPages:posts' %}">Blog Posts</a></li>
           <li><a class="about" href="{% url 'RoyalPages:about' %}">About Us</a></li>
@@ -55,7 +52,7 @@
     <script>
       const mobile = document.querySelector(".show");
       const X = document.querySelector(".xx");
-      const bars = document.querySelector(".bars");
+      const bars = document.querySelector(".toggle");
       const logo = document.querySelector("#logo");
       
       function openMenu(){
