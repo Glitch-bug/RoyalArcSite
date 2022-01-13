@@ -116,33 +116,48 @@ ion-icon {
 /* Phone */
 @media screen and (max-width:600px){
     
+    .content {
+        justify-content: space-around;
+        height: 79vh;
+        padding: 8vh 5vw 8vh 5vw;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        margin: 0;
 
+    }
     /* Body */
-    .content > p{
-        font-size: 20px;
-    }
 
-    .content > h1 {
-        font-size: 36px;
-    }
 
     .content > #shows {
-        font-size:large;
+        font-size:18px;
+        font-weight: 500;
     }
 
     #italic{
-        font-size: 2rem;
-        text-align: left;
+        font-size: 36px;
+        font-weight: 600;
+        text-align: center;
+        color:rgb(207, 170, 212);
         margin: 1rem;
     }
 
     .content > button{
         margin: 1rem;
         align-self: flex-start;
+        width: 90%;
+        font-size: 26px;
+        display: flex;
+        justify-content: center;
+        color: white;
+        /* box-shadow: ivory; */
     }
 
-    .content > i {
-        font-size: 30px;
-        color: rgb(250, 253, 77);
+    .content > button > a {
+        color: white;
+        font-weight: 600;
+        font-size: 18px;
     }
+
+    
 }

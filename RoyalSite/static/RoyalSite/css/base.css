@@ -162,7 +162,7 @@ section > img {
     /* Header */
 
     .navbar {
-        height:21vw;
+        height:14vh;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -187,7 +187,7 @@ section > img {
     }
 
     #logo {
-        width: 18vw;
+        width: 20vw;
         min-width: 50px;
     }
 
@@ -197,9 +197,9 @@ section > img {
 
     #wrapper .navbar .toggle {
         justify-self: flex-end;
-        width: 40px;
-        height: 60%;
-        background: url(toggle.png);
+        font-size: 52px;
+        color:white;
+        /* background: url(toggle.png); */
         background-size: cover;
         cursor: pointer;
         position: absolute;
