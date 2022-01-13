@@ -11,7 +11,7 @@
     height: max-content;
     width: 100%;
     background-color: rgba(184, 77, 226, 0.747);
-    position: sticky;
+    position: fixed;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -112,7 +112,12 @@ section > img {
 
 .xx{
     display: none;
+    font-size:30px;
+    color:white;
+    margin-left: 75%;
+    cursor: pointer;
 }
+
 
 .mobile{
     display: none;
@@ -122,6 +127,7 @@ section > img {
 .mobile > li {
     list-style: none;
     margin: 0 2rem;
+    padding: 0;
 }
 
 .mobile > li > a {
@@ -157,12 +163,16 @@ section > img {
 
 }
 
+.toggle{
+    visibility: hidden;
+}
+
 /* Phones */
 @media screen and (max-width:600px){
     /* Header */
 
     .navbar {
-        height:14vh;
+        height:13.5vh;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -196,10 +206,10 @@ section > img {
     }
 
     #wrapper .navbar .toggle {
+        visibility: visible;
         justify-self: flex-end;
         font-size: 52px;
         color:white;
-        /* background: url(toggle.png); */
         background-size: cover;
         cursor: pointer;
         position: absolute;
@@ -214,7 +224,7 @@ section > img {
     .mobile{
         position: absolute;
         right: 0;
-        height: 75vh;
+        height: 65vh;
         margin-left: 50vw;
         display: flex;
         flex-direction: column;
@@ -227,6 +237,7 @@ section > img {
     .mobile > li{
         align-self: flex-start;
         font-size: 3rem;
+        padding: 0;
     }
     
     .mobile > li > a{
@@ -238,12 +249,4 @@ section > img {
         font-size: medium;
     }
     
-    .mobile > h1{
-        color: rgb(216, 122, 122);
-        position: absolute;
-        display: block;
-        right: 20%;
-        top: 2rem;
-        cursor: pointer;
-    }
 }

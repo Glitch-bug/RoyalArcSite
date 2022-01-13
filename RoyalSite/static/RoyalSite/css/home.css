@@ -2,12 +2,16 @@
 
 /* Jemimah's edit start */
 body{
+    padding: 0;
+    margin: 0;
     background-image: url("background.jpg");
     background-attachment: fixed;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; 
     height: 100%;
 }
+
+
 
 #italic{
     margin: 5rem 2.5rem;
@@ -25,13 +29,14 @@ body{
 /* Header */
 #wrapper {
     background-image: url("background.jpg");
+    background-attachment: fixed;
     background-size: cover;
-    height: 100vh;
+    height: 100%;
     display: flex;
     align-items: flex-start;
-    display: flex;
     flex-direction: column;
-    
+    background: rgba(119, 119, 114, 0.7);
+    margin: 0;
 }
 .navbar > ul > li > a.home {
     border-bottom: 3px purple solid;
@@ -85,7 +90,6 @@ ion-icon {
     align-self: center;
     justify-content: center;
     align-items: center;
-    background: rgb(119, 119, 114, 0.7);
     color: rgb(27, 9, 29);
     font-size: 2rem;
 }
@@ -119,11 +123,11 @@ ion-icon {
     .content {
         justify-content: space-around;
         height: 79vh;
-        padding: 8vh 5vw 8vh 5vw;
+        padding: 8vh 5vw 5vh 5vw;
         box-sizing: border-box;
         -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
-        margin: 0;
+        margin-top: 14vh;
 
     }
     /* Body */
@@ -132,14 +136,15 @@ ion-icon {
     .content > #shows {
         font-size:18px;
         font-weight: 500;
+        color:rgb(207, 170, 212);
     }
 
     #italic{
         font-size: 36px;
         font-weight: 600;
         text-align: center;
-        color:rgb(207, 170, 212);
         margin: 1rem;
+        color: rgb(27, 9, 29);
     }
 
     .content > button{
@@ -150,7 +155,7 @@ ion-icon {
         display: flex;
         justify-content: center;
         color: white;
-        /* box-shadow: ivory; */
+        border-radius: 0;
     }
 
     .content > button > a {
