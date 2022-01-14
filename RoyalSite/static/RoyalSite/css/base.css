@@ -91,6 +91,7 @@ section {
     display: flex;
     align-items: flex-end;
     justify-self: flex-start;
+    height: 185px;
 }
 
 section > h1 {

@@ -25,13 +25,11 @@ body {
 
 #left, #right{
     width: 40%;
-    background-color: rgba(100, 100, 100, 0.7);
+    background-color: rgba(49, 48, 48, 0.7);
     padding: 10px;
     margin-top: 60px;
     max-height: max-content;
     margin-bottom: 10px;
-    box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.8);
-    border-radius: 2rem;
 }
 
 @media screen and (max-width: 1000px){
@@ -42,9 +40,8 @@ body {
 
 #left-list > b, #right-list > b{
     display: block;
-    border-radius: 2rem;
     background-color: lightgrey;
-    padding: 1rem;
+    padding: 0.7rem;
     margin: 0.3rem 1rem;
     text-align: center;
     font-size: 1.5rem;

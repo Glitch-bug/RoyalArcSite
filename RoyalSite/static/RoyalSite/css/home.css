@@ -78,6 +78,10 @@ ion-icon {
     background: aliceblue;
 }
 
+.content > button:hover > a {
+    color:rgb(65, 11, 65);
+}
+
 .content {
     margin: auto;
     order:2;
