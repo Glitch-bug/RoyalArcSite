@@ -22,6 +22,7 @@
     background-color: rgba(0, 0, 0, 0.7);
     top: 0;
     z-index: 50;
+    border:solid 2px turquoise;
 }
 
 ion-icon {
@@ -32,9 +33,9 @@ ion-icon {
 }
 
 .fImg{
-    width: 90%;
-    max-width: 500px;
-    max-height: 500px;
+    max-width: 90%;
+    max-height: 70%;
+    border:solid 2px turquoise;
 }
 
 .fullImage > #close {
@@ -145,6 +146,7 @@ div:hover > .tooltip {
     .img {
         height: 60vh;
         max-width: 550px;
+        min-width: 300px;
         cursor: pointer;
         display: flex;
         flex-direction: column;
@@ -152,12 +154,14 @@ div:hover > .tooltip {
         justify-content: center;
         flex-wrap: wrap;
         transition: all 0.34s ease-in-out;
+        border: none;
     }
     
     .img > img {
-        max-width: 22rem;
-        height: 16rem;
+        max-width: 100%;
+        height: 90%;
         align-self: flex-start;
-        margin: 1rem;
+        margin: 0;
     }
+      
 }
