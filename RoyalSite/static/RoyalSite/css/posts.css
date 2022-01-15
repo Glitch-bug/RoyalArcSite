@@ -148,76 +148,7 @@ li {
 
 /* Phones */
 
-/* @media screen and (max-width:600px) {
-    .search-sec {
-        display: block;
-        order: 0;
-        width: 100%;
-        background-color: darkgrey;
-        z-index: 2;
-    }
-
-    .search-sec * {
-        margin: 0px;
-    }
-
-    .search-sec > #search-items {
-        display: none;
-        position: absolute;
-        background-color: darkgrey;
-        max-height: 300px;
-        overflow-y:scroll;
-        margin: 0px;
-    } 
-
-
-    .main {
-        flex-direction: row;
-        /* align-items: center;
-        justify-content: center; 
-    }
-
-    .search-sec  #search-form {
-        display: block;
-        padding: 0px;
-        margin: 0px;
-    } 
-    
-    .search-sec a {
-        margin-top: 0px;
-        margin-bottom: 0px;
-    }
-
-    #search-input {
-        height: 40px;
-    }
-
-    li {
-        padding: 5px 5px 5px;
-    }
-
-    .posts {
-        order: 1;
-    }
-
-    .posts{
-        width: 100%;
-    }
-
-    .post-info {
-        width: fit-content;
-        border: none;
-    }
-
-    .post-text {
-        margin: 0px;
-        margin-left: 30px;
-        width: 90vw;
-        padding-top:15px;
-    }
-} */
-
-@media screen and (max-width: 700px){
+@media screen and (max-width: 600px){
     body{
         background: white;
     }
@@ -226,6 +157,7 @@ li {
         width: 100%;
         padding: 0;
         height: min-content;
+        z-index: 2;
     }
 
     .search-sec *{
@@ -243,24 +175,38 @@ li {
     .search-sec > #search-form > input{
         min-height: 8vh;
     }
+    body {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+    }
 
+    #wrapper{
+        height: 100%;
+    }
+    
     .main{
         flex-direction: column-reverse;
         margin: auto;
+        height: 100%;
     }
-    .posts {
+    .post-list {
         display: flex;
         flex-direction: column;
+        background-color: rgba(236, 235, 235, 0.9);
+        height: 100%;
+        min-height: 100vh;
+        margin: 1.5vh;
     }
     .post{
-        margin: 1.5rem 0rem;
+        margin: 7px 0rem;
         width: 100%;
     }
 
     .post-info{
         margin: 0.1rem 0.6rem 0.5rem 1rem;
         padding: 10px 10px;
-        width: 70%;
+        width: 75%;
         height: 6.5vh;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -268,16 +214,20 @@ li {
         align-items: center;
     }
 
-    .post-info >  {
-        display: inline;
+    .post-info > p {
         overflow:hidden;
-        text-overflow: ellipsis;
+        text-overflow:ellipsis;
+        white-space: nowrap;
     }
 
     .post-text{
         margin: 0.2 0rem;
         width: 85%;
+        max-height: 150px;
+        overflow:hidden;
+        text-overflow:ellipsis;
     }
+
     .post-text > p {
         text-align: center;
         font-size: 1rem;
