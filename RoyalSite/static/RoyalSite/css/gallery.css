@@ -96,13 +96,11 @@ body {
     display: inline;
 }
 
-/* .img:hover img{
-    border:5px solid purple;
-} */
+
 
 .img:hover img{
     transform: scale(1.2);
-    border: 3px solid rgb(255, 80, 255);
+    border: 5px solid rgb(255, 80, 255);
 }
 
 .buttons {
@@ -137,6 +135,28 @@ div:hover > .tooltip {
         justify-self: unset;
         justify-content: space-between;
         align-items: center;
-        border: solid 2px indigo;
+    }
+
+    .img:hover img{
+        border: 5px solid rgb(255, 80, 255);
+    }
+
+    .img {
+        height: 60vh;
+        max-width: 550px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        transition: all 0.34s ease-in-out;
+    }
+    
+    .img > img {
+        max-width: 22rem;
+        height: 16rem;
+        align-self: flex-start;
+        margin: 1rem;
     }
 }
