@@ -1,6 +1,4 @@
-img {
-    border: 3px solid white;
-}
+
 .gallery {
     width: 100%;
     margin: 50px 0px 50px;
@@ -67,7 +65,7 @@ ion-icon {
 }
 
 body {
-    background: linear-gradient(45deg, lightgray, darkslateblue, pink);
+    background-color: rgb(250, 241, 250);
 }
 .navbar {
     background: linear-gradient(45deg, lightgray, darkslateblue, pink);
@@ -104,6 +102,7 @@ body {
 
 .img:hover img{
     transform: scale(1.2);
+    border: 3px solid rgb(255, 80, 255);
 }
 
 .buttons {
@@ -128,10 +127,10 @@ div:hover > .tooltip {
     visibility: visible;
 }
 
-/* @media screen and (max-height:480px){
+@media screen and (max-height:480px){
     .img{
         height: 60px;
         min-width: 0px;
         max-width: 300px;
     }
-} */
+}

@@ -106,43 +106,6 @@ body{
     background-color: darkgrey;
     overflow-y:scroll;
 }
-
-@media screen and (max-width: 700px){
-    body{
-        background: gray;
-    }
-
-    .search-sec{
-    height: 30vh;
-    width: 100%;
-    }
-
-    .main{
-        flex-direction: column-reverse;
-        margin: auto;
-    }
-
-    .post{
-        margin: 1.5rem 1rem;
-    }
-
-    .post-info{
-        margin: 0.1rem 0.6rem 0.5rem 1rem;
-        padding: 1rem 0.6rem;
-        width: 80%;
-    }
-
-    .post-text{
-        margin: 0.2 0rem;
-        width: 100%;
-    }
-    .post-text > p {
-        padding: 0 2rem;
-        text-align: left;
-        font-size: 1rem;
-    }
-}
-
 #search-form {
     width: 100%;  
 }
@@ -181,6 +144,7 @@ li {
     color: purple;
     padding-left: 5px; 
 }
+
 
 /* Phones */
 
@@ -252,4 +216,71 @@ li {
         padding-top:15px;
     }
 } */
+
+@media screen and (max-width: 700px){
+    body{
+        background: white;
+    }
+
+    .search-sec{
+        width: 100%;
+        padding: 0;
+        height: min-content;
+    }
+
+    .search-sec *{
+        margin: 0;
+    }
+
+    .search-sec > #search-items {
+        display: none;
+        position: absolute;
+        background-color: darkgrey;
+        max-height: 300px;
+        overflow-y:scroll;
+        margin: 0px;
+    } 
+    .search-sec > #search-form > input{
+        min-height: 8vh;
+    }
+
+    .main{
+        flex-direction: column-reverse;
+        margin: auto;
+    }
+    .posts {
+        display: flex;
+        flex-direction: column;
+    }
+    .post{
+        margin: 1.5rem 0rem;
+        width: 100%;
+    }
+
+    .post-info{
+        margin: 0.1rem 0.6rem 0.5rem 1rem;
+        padding: 10px 10px;
+        width: 70%;
+        height: 6.5vh;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: flex;
+        align-items: center;
+    }
+
+    .post-info >  {
+        display: inline;
+        overflow:hidden;
+        text-overflow: ellipsis;
+    }
+
+    .post-text{
+        margin: 0.2 0rem;
+        width: 85%;
+    }
+    .post-text > p {
+        text-align: center;
+        font-size: 1rem;
+    }
+}
 

@@ -27,15 +27,13 @@ body {
     width: 40%;
     background-color: rgba(49, 48, 48, 0.7);
     padding: 10px;
-    margin-top: 60px;
+    margin-top: 80px;
     max-height: max-content;
     margin-bottom: 10px;
 }
 
 @media screen and (max-width: 1000px){
-    #left, #right{
-        width: 80%;
-    }
+    
 }
 
 #left-list > b, #right-list > b{
@@ -90,4 +88,9 @@ body {
     #left > p {
         margin-bottom: 6px;
     }
+
+    #left, #right{
+        width: 80%;
+    }
+    
 }

@@ -50,26 +50,32 @@
     {% block body %}
     {% endblock body %}
     <script>
-      const mobile = document.querySelector(".show");
-      const X = document.querySelector(".xx");
-      const bars = document.querySelector(".toggle");
-      const logo = document.querySelector("#logo");
+      document.addEventListener("DOMContentLoaded", function(){
+        const mobile = document.querySelector(".show");
+        const X = document.querySelector(".xx");
+        const bars = document.querySelector(".toggle");
+        const logo = document.querySelector("#logo");
+
+        var viewport = document.querySelector("meta[name=viewport]");
+        viewport.setAttribute('content', viewport.content + ", height=" + window.innerHeight);
+        
+        function openMenu(){
+          mobile.classList.remove("desktop");
+          mobile.classList.add("mobile");
+          X.style.display = "block";
+        }
+
+        function closeMenu(){
+          mobile.classList.remove("mobile");
+          mobile.classList.add("desktop");
+          X.style.display = "none";
+        }
+
+        bars.addEventListener("click", openMenu, false);
+        X.addEventListener("click", closeMenu, false);
+
+      })
       
-      function openMenu(){
-        mobile.classList.remove("desktop");
-        mobile.classList.add("mobile");
-        X.style.display = "block";
-      }
-
-      function closeMenu(){
-        mobile.classList.remove("mobile");
-        mobile.classList.add("desktop");
-        X.style.display = "none";
-      }
-
-      bars.addEventListener("click", openMenu, false);
-      X.addEventListener("click", closeMenu, false);
-
     </script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
