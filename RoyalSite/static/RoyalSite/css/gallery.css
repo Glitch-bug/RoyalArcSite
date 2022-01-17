@@ -69,7 +69,7 @@ body {
     background-color: rgb(250, 241, 250);
 }
 .navbar {
-    background: linear-gradient(45deg, lightgray, darkslateblue, pink);
+    background: linear-gradient(45deg, rgba(71, 61, 139, 0.85), rgba(255, 192, 203, 0.85));
 }
 
 .navbar > ul > li > a.Gallery {
