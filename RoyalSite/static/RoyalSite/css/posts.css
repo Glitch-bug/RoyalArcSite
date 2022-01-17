@@ -53,6 +53,16 @@ body{
     background-color: purple;
 }
 
+.post-list > h2{
+    padding-top: 1.5vh;
+    color: white;
+}
+
+.post-list > hr {
+    width: 95%;
+    border: 2px solid white;
+}
+
 .post-info {
     display: flex;
     flex-direction: row;
@@ -118,7 +128,6 @@ body{
     font-size: bold;
     color: white;
     background-color: blueviolet;
-    box-shadow: 0px 3px 3px rgb(60, 50, 60);
     padding: 14px 4px 14px;
     font-weight: bold;
 }
@@ -171,10 +180,12 @@ li {
         max-height: 300px;
         overflow-y:scroll;
         margin: 0px;
-    } 
+    }
+
     .search-sec > #search-form > input{
         min-height: 8vh;
     }
+
     body {
         height: 100%;
         padding: 0;
@@ -198,6 +209,16 @@ li {
         min-height: 100vh;
         margin: 1.5vh;
     }
+
+    .post-list > h2 {
+        padding-left: 0.5vw;
+    }
+    .post-list > hr {
+        width: 99%;
+        align-self: center;
+        
+    }
+
     .post{
         margin: 7px 0rem;
         width: 100%;

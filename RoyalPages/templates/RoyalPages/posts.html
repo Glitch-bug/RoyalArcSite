@@ -10,22 +10,24 @@
 {% block body %}
   <div class="main">
     <div class="post-list">
-    <ul>
-      {% for post in posts %}
-        <div class="post">
-          <div class="post-info">
-            <a href="{% url 'RoyalPages:blog' post.pk %}">{{ post.title }}</a>&middot;
-            <p> by {{ post.owner }} | {{ post.date_added|date:'M d, Y H:i' }}.</p>
+      <h2>Recent Posts</h2>
+      <hr/>
+      <ul>
+        {% for post in posts %}
+          <div class="post">
+            <div class="post-info">
+              <a href="{% url 'RoyalPages:blog' post.pk %}">{{ post.title }}</a>&middot;
+              <p> by {{ post.owner }} | {{ post.date_added|date:'M d, Y H:i' }}.</p>
+            </div>
+            <div class="post-text">
+            <p>{{ post.text|linebreaks }}</p>
+            <div class="buttons">
+              <div class="views">Views: {{post.views}}</div>
+              <button><a href="{% url 'RoyalPages:blog' post.pk %}">Read</a></button>
+            </div>
           </div>
-          <div class="post-text">
-          <p>{{ post.text|linebreaks }}</p>
-          <div class="buttons">
-            <div class="views">Views: {{post.views}}</div>
-            <button><a href="{% url 'RoyalPages:blog' post.pk %}">Read</a></button>
-          </div>
-        </div>
-      {% endfor %}
-    </ul>
+        {% endfor %}
+      </ul>
     </div>
     <div class="search-sec">
       <form id="search-form" autocomplete="off">
