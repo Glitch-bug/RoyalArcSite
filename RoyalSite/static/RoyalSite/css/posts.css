@@ -190,6 +190,7 @@ li {
         height: 100%;
         padding: 0;
         margin: 0;
+        background: linear-gradient(to top, darkgray, gray, white);
     }
 
     #wrapper{
@@ -204,10 +205,11 @@ li {
     .post-list {
         display: flex;
         flex-direction: column;
-        background-color: rgba(236, 235, 235, 0.9);
+        background-color: rgba(255, 255, 255, 0.5);
         height: 100%;
         min-height: 100vh;
         margin: 1.5vh;
+        padding: 5px;
     }
 
     .post-list > h2 {
@@ -216,7 +218,9 @@ li {
     .post-list > hr {
         width: 99%;
         align-self: center;
-        
+        border:0;
+        height: 1px;
+        background-image: linear-gradient(to right,black, white);
     }
 
     .post{
@@ -228,11 +232,13 @@ li {
         margin: 0.1rem 0.6rem 0.5rem 1rem;
         padding: 10px 10px;
         width: 75%;
-        height: 6.5vh;
+        height: 6.8vh;
         overflow: hidden;
         text-overflow: ellipsis;
         display: flex;
         align-items: center;
+        border: none;
+        background-color: rgba(230, 95, 223, 0.5);
     }
 
     .post-info > p {
@@ -252,6 +258,7 @@ li {
     .post-text > p {
         text-align: center;
         font-size: 1rem;
+        margin: 0px;
     }
 }
 
