@@ -38,16 +38,9 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30px;
+    padding: 7vh 0.5vw;
 }
 
-@media screen and (max-width: 700px){
-    #content{
-        width: 100%;
-        background-color: rgb(194, 189, 189);
-        margin: 0 auto;
-    }
-}
 
 #title {
     display: flex;
@@ -82,7 +75,7 @@ body{
 }
 
 #page > button:hover{
-    border: 1px solid red;
+    transform: scale(1.25);
 }
 
 
@@ -107,4 +100,29 @@ body{
     margin-bottom: 20px;
     display: block;
     width: 100%;
+}
+
+
+@media screen and (max-width: 700px){
+    #content{
+        width: 100%;
+        background-color: lightgrey;
+        margin: 0 auto;
+        padding: 6vh 7vw 5vh 7vw;
+    }
+
+    #title{
+        background: rgb(212, 144, 212);
+    }
+    
+    #page {
+        background-color: rgba(255, 255, 255, 0.75);
+        padding: 5vh 5vw;
+    }
+
+    #page > button{
+        background: rgb(212, 144, 212);
+    }
+
+
 }
