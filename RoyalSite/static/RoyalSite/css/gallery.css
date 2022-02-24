@@ -22,7 +22,7 @@
     background-color: rgba(0, 0, 0, 0.7);
     top: 0;
     z-index: 50;
-    border:solid 2px turquoise;
+    
 }
 
 ion-icon {
@@ -35,7 +35,6 @@ ion-icon {
 .fImg{
     max-width: 90%;
     max-height: 70%;
-    border:solid 2px turquoise;
 }
 
 .fullImage > #close {

@@ -98,22 +98,35 @@ ion-icon {
     font-size: 2rem;
 }
 
-.content > h1 {
+.content  h1 {
     font-size: 4rem;
     font-weight: bold;
     color: rgb(250, 253, 77);
     text-shadow: 3px 3px black, -3px -3px black;
 }
 
-.content > i {
+.content  i {
     font-size: 60px;
     color: rgb(119, 119, 114);
 }
 
-.content > #shows {
+.content  #shows {
     text-align: center;
 }
 
+
+.fades {
+    opacity: 1;
+    display: flex;
+    /* 100% */
+    flex-direction: column;
+    justify-self: center;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    color: rgb(27, 9, 29);
+    font-size: 2rem;
+}
 
 #info {
     position: fixed;

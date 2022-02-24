@@ -55,9 +55,16 @@
         const X = document.querySelector(".xx");
         const bars = document.querySelector(".toggle");
         const logo = document.querySelector("#logo");
+        var view  = true
 
         var viewport = document.querySelector("meta[name=viewport]");
         viewport.setAttribute('content', viewport.content + ", height=" + window.innerHeight);
+        console.log(window.innerWidth )
+        function check_view() {
+          if (window.innerWidth <= 600){
+            logo.setAttribute("src").setAttribute("src", "{% static 'RoyalSite/images/Ico2.jpeg' %}");
+          }
+        }
         
         function openMenu(){
           mobile.classList.remove("desktop");
@@ -74,7 +81,7 @@
         bars.addEventListener("click", openMenu, false);
         X.addEventListener("click", closeMenu, false);
 
-      })
+      });
       
     </script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

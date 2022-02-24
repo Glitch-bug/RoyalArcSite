@@ -5,13 +5,15 @@
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
   <meta content="utf-8" http-equiv="encoding">
   <div class="content">
-    <i id='italic'>Leave the dirty work to us!</i>
-    <p id="shows">
-    </p>
+    <div class='fades'>
+      <i id='italic'>Leave the dirty work to us!</i>
+      <p id="shows" ></p>
+    </div>
     <button>
       <a href="tel:+233555506625">Contact Us</a>
     </button>
   </div>
+  <p>control</p>
   <ul id='info'>
 
   </ul>
@@ -20,28 +22,81 @@
   <script>
     var data = '{{abouts_qs}}'
     var rdata = JSON.parse(data.replace(/&quot;/ig, '"'))
+    var num = 0;
+    var fades = document.querySelector('.fades');
+   
+    var changetime = 13000
 
     document.addEventListener("DOMContentLoaded", function() {
-      setInterval(change, 8000);
+      var boobs = setInterval(change, changetime);
     });
 
-    var num = 0;
-
-    function change() {
-      console.log('chicken')
+    
+    function start_fade() {
+      var Xinterval = setInterval(fade, 200);
       var text = rdata[num]['fields']['text']
       var italics = rdata[num]['fields']['title']
       var background = rdata[num]['fields']['background']
-      document.getElementById('italic').innerHTML = italics
-      document.getElementById('shows').innerHTML = text;
-      document.getElementById('wrapper').style.backgroundImage = `url(/static/RoyalSite/css/${background})`
+      var nubs = 0;
+
+      function fade () {
+        
+        var opacity = getComputedStyle(fades).opacity
+        
+        nubs += 1; 
+        console.log(opacity)
+        fades.style.opacity = opacity - 1/15;
+        if (nubs == 15) {
+          clearInterval(Xinterval);
+          document.querySelector('#italic').innerHTML = italics;
+          document.querySelector('#shows').innerHTML = text
+          document.getElementById('wrapper').style.backgroundImage = `url(/static/RoyalSite/css/${background})`
+
+          wait()
+        }
+      };
+    }
+    
+    function wait() {
+      n = 0
+      clear = setInterval(()=> {
+        n += 1;
+        if (n == 1){
+          clearInterval(clear)
+          start_pop();
+        }
+      }, 2000);
+    }
+
+
+    function start_pop() {
+      var Cinterval = setInterval(pop, 200);
+
+      var stubs = 0;
+
+      function pop(){
+        var opacity = getComputedStyle(fades).opacity;
+        
+        console.log(opacity);
+
+        stubs += 1/25;
+        fades.style.opacity = stubs;
+        if (fades.style.opacity >= 1){
+          clearInterval(Cinterval);
+        }
+      };
+    };
+    
+    function change() {
+    
+      start_fade();
+     
       if (num < rdata.length - 1) {
           num += 1
-          console.log(num)
       } else {
-          num = 0
+          num = 0  
       }
-      console.log(rdata)
+      
     }; 
 
   </script>
