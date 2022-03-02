@@ -42,7 +42,6 @@
         <ion-icon name="menu-outline" class="toggle"></ion-icon>
         <ul class = "desktop show">
           <!-- Add close button, Make toggle disapear after openning menu -->
-          <ion-icon name="close-outline" class="xx"></ion-icon>
           <li><a class="home" href="{% url 'RoyalPages:home' %}">Home</a></li>
           <li><a class="posts" href="{% url 'RoyalPages:posts' %}">Blog Posts</a></li>
           <li><a class="about" href="{% url 'RoyalPages:about' %}">About Us</a></li>
@@ -57,10 +56,8 @@
     <script>
       document.addEventListener("DOMContentLoaded", function(){
         const mobile = document.querySelector(".show");
-        const X = document.querySelector(".xx");
         const bars = document.querySelector(".toggle");
         const logo = document.querySelector("#logo");
-
         var view  = true
 
         var viewport = document.querySelector("meta[name=viewport]");
@@ -75,17 +72,21 @@
         function openMenu(){
           mobile.classList.remove("desktop");
           mobile.classList.add("mobile");
-          X.style.display = "block";
         }
 
         function closeMenu(){
           mobile.classList.remove("mobile");
           mobile.classList.add("desktop");
-          X.style.display = "none";
         }
 
-        bars.addEventListener("click", openMenu, false);
-        X.addEventListener("click", closeMenu, false);
+        bars.addEventListener("click", () => {
+          if(mobile.classList.contains('mobile')){
+            closeMenu();
+          }else{
+            openMenu();
+          }
+        });
+        // X.addEventListener("click", closeMenu, false);
 
       });
       

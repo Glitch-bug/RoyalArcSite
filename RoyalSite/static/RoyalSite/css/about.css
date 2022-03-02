@@ -57,7 +57,7 @@ body {
 
 .navbar > ul > li > a.about {
     border-bottom: 3px purple solid;
-    color: rgba(248, 252, 52, 0.6);
+    color: #CB9F85;
     width: 100%;
 }
 

@@ -10,14 +10,12 @@
 .navbar {
     height: max-content;
     width: 100%;
-    background-color: rgba(184, 77, 226, 0.747);
+    background-color: #CA80DC;
     position: fixed;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     z-index: 3;
-    /* overflow-x:visible; */
-    /* border-radius: 2rem 0; */
 }
 
 #logo {
@@ -30,7 +28,7 @@
 }
 
 #logo:hover{
-    transform: scale(1.1) rotate(30deg);
+    cursor: pointer;
 }
 
 .desktop{
@@ -74,7 +72,7 @@
 
 .desktop > li > a:hover {
     border-bottom-width: inherit;
-    color: rgba(251, 255, 0, 0.6);
+    color: #CB9F85;
     width: 100%;
 
 }
@@ -87,19 +85,17 @@ body {
 }
 
 section {
-    background-color: rgb(52, 52, 62);
     display: flex;
-    align-items: flex-end;
-    justify-self: flex-start;
-    height: 185px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 section > h1 {
     font-size: 2rem;
     color: white;
     font-family: 'Roboto', sans-serif;
-    margin-left: 10px;
-    padding: 2rem;
+    margin-top: 8rem;
 }
 
 section > img {
@@ -108,17 +104,6 @@ section > img {
     width: 190px;
     height: 180px;
 }
-
-
-
-.xx{
-    display: none;
-    font-size:30px;
-    color:white;
-    margin-left: 75%;
-    cursor: pointer;
-}
-
 
 .mobile{
     display: none;
@@ -133,7 +118,7 @@ section > img {
 
 .mobile > li > a {
     text-decoration: none; 
-    color: white;
+    color: black;
     font-size: 1.3rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold;
@@ -144,39 +129,30 @@ section > img {
 
 .mobile > li > a::before{
     content: '';
-    height: 0.15rem;
-    width: 100%;
-    display: block;
-    background-color: rgba(173, 175, 45);
-    transform: scale(0);
-    transform-origin: left;
-    transition: transform 0.5s ease-in-out;
-}
-
-.mobile > li > a:hover::before{
-    transform: scale(1);
+    display: none;
 }
 
 .mobile > li > a:hover {
     border-bottom-width: inherit;
-    color: rgba(251, 255, 0, 0.6);
+    color: #CB9F85;
     width: 100%;
 
 }
 
 .toggle{
     visibility: hidden;
-    color:black;
+    color: white;
 }
 /* Phones */
 @media screen and (max-width:600px){
     /* Header */
 
     .navbar {
-        height:13.5vh;
+        height: 10vh;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        background-color: #070707;
     }
 
     .desktop > li{
@@ -191,6 +167,8 @@ section > img {
 
     section h1 {
         font-size: 22;
+        color: black;
+        margin-top: 3rem;
     }
 
     h2 {
@@ -200,6 +178,8 @@ section > img {
     #logo {
         width: 20vw;
         min-width: 50px;
+        outline: none;
+        border: none;
     }
 
     section{
@@ -219,25 +199,26 @@ section > img {
         margin-right: 2vw;
         color: black;
       }
-    
 
-    
+      .toggle{
+        color: #A63698 !important;
+      }
 
     .mobile{
         position: absolute;
+        top: 4.5rem;
         right: 0;
-        height: 65vh;
-        margin-left: 50vw;
+        height: 50vh;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        background: rgba(0, 0, 0, 0.7);
-        
+        background: rgba(255, 255, 255, 0.85);
+        width: 70vw;
     }
     
     .mobile > li{
-        align-self: flex-start;
+        align-self: center;
         font-size: 3rem;
         padding: 0;
     }
