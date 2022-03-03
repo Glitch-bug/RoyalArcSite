@@ -8,7 +8,7 @@
 /* Header */
 
 .navbar {
-    height: max-content;
+    height: 15%;
     width: 100%;
     background-color: #CA80DC;
     position: fixed;
@@ -25,6 +25,8 @@
     border: 3px solid rgb(48, 48, 48);
     background-color: rgba(255, 255, 255, 0.747);
     transition: all 0.5s ease-in-out;
+    border: none;
+    outline: none;
 }
 
 #logo:hover{
@@ -45,7 +47,7 @@
 }
 
 .desktop > li > a {
-    text-decoration: none; 
+    text-decoration: none;
     color: white;
     font-size: 1.3rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -53,7 +55,25 @@
     border-bottom: 3px purple solid;
     border-bottom-width: 0;
     transition: border-bottom-width  0.4s linear;
+    -webkit-transition: border-bottom-width  0.4s linear;
+    -moz-transition: border-bottom-width  0.4s linear;
+    -ms-transition: border-bottom-width  0.4s linear;
+    -o-transition: border-bottom-width  0.4s linear;
 } 
+
+@media screen and (max-width: 712px) and (min-width:599px) {
+    .desktop > li{
+        margin: 0 1.5rem;
+    }
+
+    .desktop > li > a{
+        font-size: 1rem;
+    }
+
+    /* .navbar{
+        height: 
+    } */
+}
 
 .desktop > li > a::before{
     content: '';
@@ -143,12 +163,13 @@ section > img {
     visibility: hidden;
     color: white;
 }
+
 /* Phones */
 @media screen and (max-width:600px){
     /* Header */
 
     .navbar {
-        height: 10vh;
+        height: 11.5%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -206,7 +227,7 @@ section > img {
 
     .mobile{
         position: absolute;
-        top: 4.5rem;
+        top: 100%;
         right: 0;
         height: 50vh;
         display: flex;
