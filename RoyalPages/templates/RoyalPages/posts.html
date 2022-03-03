@@ -46,7 +46,10 @@
         </div>
     </div>
   </div>
-  <script>const ata = '{{popular_qs}}'</script>
+  <script>
+  const ata = '{{ popular_qs }}'
+  console.log(ata)
+  </script>
   <script src="{% static 'RoyalSite/js/jquery.js' %}"></script>
   <script src="{% static 'RoyalSite/js/posts.js' %}"></script>
 {% endblock body %}

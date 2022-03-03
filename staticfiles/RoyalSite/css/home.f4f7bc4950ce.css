@@ -4,7 +4,7 @@
 body{
     padding: 0;
     margin: 0;
-    background-image: url("background.jpg");
+    background-image: url("background.e8a82973d8e5.jpg");
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat; 
@@ -33,7 +33,7 @@ body{
 
 /* Header */
 #wrapper {
-    background-image: url("background.jpg");
+    background-image: url("background.e8a82973d8e5.jpg");
     background-attachment: fixed;
     background-size: cover;
     height: 100%;

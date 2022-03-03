@@ -118,7 +118,6 @@ ion-icon {
     color: rgb(27, 9, 29);
     font-size: 2rem;
     height: 100vh;
-    border: 2px solid green;
 }
 
 .content  #shows {
@@ -139,8 +138,6 @@ ion-icon {
     color: rgb(27, 9, 29);
     font-size: 2rem;
     height: 70vh;
-    border: 2px solid blue
-    padding: 2px;
 }
 
 #info {

@@ -65,29 +65,73 @@ def prep_jsons(query_set):
         item.text = item.text.replace('\ ', ' ')
         item.text =  dots.sub('.', item.text)
         item.text = item.text.replace('.\\', '.')
+
     query_set = serializers.serialize("json", query_set)
     return query_set
 
+# def prep_json_popular(query_set):
+#     briefcase = []
+#     dots = re.compile(r'\\.')
+#     for item in query_set:
+#         item.title = re.escape(item.title)
+#         item.title = item.title.replace('\ ', ' ')
+#         item.title = dots.sub('.', item.title)
+#         item.title = item.title.replace('.\\', '.')
+#         item.text = re.escape(item.text)
+#         item.text = item.text.replace('\ ', ' ')
+#         item.text =  dots.sub('.', item.text)
+#         item.text = item.text.replace('.\\', '.')
+        
+#         # print(type(item.cover))
+#         item.cover = re.escape(str(item.cover))
+#         item.cover = item.cover.replace('\ ', ' ')
+#         item.cover =  dots.sub('.', item.cover)
+#         item.cover = item.cover.replace('.\\', '.')
+
+#     query_set = serializers.serialize("json", query_set)
+    # return query_set
+
 def extractor(array, num):
-    boolean = False
     for item in array:
-        item.title = item.title.title()
-        item.text = item.text.split()
-        item.text = item.text[:10 * num]
-        if len(item.text) == 10 * num:
-            boolean = True
-        item.text = ' '.join(item.text)
-        if boolean:
-            item.text+='...'
-            boolean = False
+        if len(item.text.split()) > 10 * num:
+            item.title = item.title.title()
+            item.text = item.text.split()
+            item.text = item.text[:10 * num]
+            item.text = ' '.join(item.text)
+            item.text+='...'  
     return(array)
+
+def p_extractor(array, num):
+    array = list(array)
+    for ar in range(len(array)):
+        array[ar] = list(array[ar])
+    for item in array:
+        if len(item[1].split()) > 10 * num:
+            item[0] = item[0]
+            item[1] = item[1]
+            item[1] = item[1].split()
+            item[1] = item[1][:10*num]
+            item[1] = ' '.join(item[1])
+            item[1] += '...'
+    return(array)
+
+def diction(alist):
+    print(alist)
+    diction = {}
+    for item in range(len(alist)):
+        diction.setdefault(f'item', {'title': alist[item][0], 'text': alist[item][1], 'pk': alist[item][2]})
+    print(type(diction))
+    return diction
 
 def posts(request):
     posts = BlogPost.objects.order_by('-date_added')
     popular = BlogPost.objects.order_by('-views')
+    popular_qs = BlogPost.objects.order_by('-views').values_list('title', 'text', 'pk')
+    popular_qs = p_extractor(popular_qs, 2)
     popular = extractor(popular, 2)
     posts = extractor(posts, 10)
-    popular_qs = prep_jsons(popular)
+    popular_qs = json.dumps(diction(popular_qs))
+    # popular_qs = serializers.serialize('json', popular_qs)
     context = {'posts': posts, 'popular': popular, 'popular_qs': popular_qs}
     print(popular_qs)
     return render(request, "RoyalPages/posts.html", context)
@@ -116,7 +160,7 @@ def search_results(request):
                 data.append(item)
             res = data
         else:
-            res = 'No posts found...'
+            res = 'No matching posts found...'
         return JsonResponse({'data': res})
     return JsonResponse({})
 
