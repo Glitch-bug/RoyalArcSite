@@ -169,7 +169,7 @@ section > img {
     /* Header */
 
     .navbar {
-        height: 11.5%;
+        height: 12vh;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
