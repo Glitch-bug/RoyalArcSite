@@ -15,13 +15,13 @@ def home(request):
     abouts = AboutUs.objects.all()
     abouts = filename(abouts)
     abouts_qs = prep_json(abouts)
-    context = {'home':"home", 'abouts': abouts, 'abouts_qs': abouts_qs}
+    context = {'home':"home", 'abouts': abouts, 'abouts_qs': abouts_qs, 'name': 'Home'}
     return render(request, "RoyalPages/home.html", context)
 
 def about(request):
     abouts = AboutUs.objects.all()
     abouts_qs = prep_json(abouts)
-    context = {'abouts': abouts, 'abouts_qs': abouts_qs}
+    context = {'abouts': abouts, 'abouts_qs': abouts_qs, 'name':'About Us'}
     return render(request, "RoyalPages/about.html", context)
 
 def blog_post(request, pk):
@@ -29,7 +29,7 @@ def blog_post(request, pk):
     post = BlogPost.objects.get(pk=pk)
     post.views = post.views + 1
     post.save()
-    context = {'post': post}
+    context = {'post': post, 'name': post.title}
     return render(request, "RoyalPages/post.html", context)
 
 def filename(query_set):
@@ -39,8 +39,8 @@ def filename(query_set):
     return query_set
 
 def prep_json(query_set):
-    case = re.compile(r'\s')
-    briefcase = []
+    # case = re.compile(r'\s')
+    # briefcase = []
     for item in query_set:
         item.text = item.text.replace('\r', '\\r')
         item.text = item.text.replace('\n', '\\n')
@@ -54,7 +54,7 @@ def prep_json(query_set):
     return query_set
 
 def prep_jsons(query_set):
-    briefcase = []
+    # briefcase = []
     dots = re.compile(r'\\.')
     for item in query_set:
         item.title = re.escape(item.title)
@@ -132,14 +132,14 @@ def posts(request):
     posts = extractor(posts, 10)
     popular_qs = json.dumps(diction(popular_qs))
     # popular_qs = serializers.serialize('json', popular_qs)
-    context = {'posts': posts, 'popular': popular, 'popular_qs': popular_qs}
+    context = {'posts': posts, 'popular': popular, 'popular_qs': popular_qs, 'name':'Posts'}
     print(popular_qs)
     return render(request, "RoyalPages/posts.html", context)
 
 def gallery(request):
     gallery = Image.objects.order_by('-id')
     gallery_qs = serializers.serialize("json", gallery)
-    context = {'gallery': gallery, "gallery_qs": gallery_qs}
+    context = {'gallery': gallery, "gallery_qs": gallery_qs, 'name':'Gallery'}
     return render(request, "RoyalPages/gallery.html", context)
 
 def search_results(request):

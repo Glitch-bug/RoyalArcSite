@@ -19,7 +19,8 @@
   <div class="gallery" id='gala'>
     {% for image in gallery %}
     <div class="img">
-      <img id="{{image.pk}}" class="cImg" src='{{image.image.url}}' placeholder="image not found" onclick="openFullImg(this.src, this.id)">
+      <!-- Check alt tag image.title.title to make sure it returns the images title -->
+      <img id="{{image.pk}}" class="cImg" src='{{image.image.url}}' placeholder="image not found" onclick="openFullImg(this.src, this.id)" alt="{{image.title.title}}">
       {% if image.title %}
         <p class="tooltip">{{image.title.title}}</p>
       {% endif %}
